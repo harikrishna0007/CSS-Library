@@ -1,0 +1,34 @@
+@use '../tokens/colors' as c;
+@use '../tokens/typography' as t;
+@use '../tokens/layout' as l;
+@use 'sass:color';
+
+.btn {
+  font-family: t.$font-text;
+  font-weight: 600;
+  border-radius: l.$border-radius;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  transition: opacity .15s ease, transform .06s ease;
+
+  &.btn-primary {
+    background: c.$monumental-bronze;
+    color: c.$statuary-white;
+    border: 1px solid color.adjust(c.$monumental-bronze, $lightness: -8%);
+  }
+
+  &.btn-secondary {
+    background: c.$capital-cream;
+    color: c.$monumental-bronze;
+    border: 1px solid color.adjust(c.$capital-cream, $lightness:-10%);
+  }
+
+  &.btn-accent {
+    background: c.$capital-blue;
+    color: c.$statuary-white;
+  }
+
+  &:hover { opacity: .95; transform: translateY(-1px); }
+  &:active { transform: translateY(0); }
+}

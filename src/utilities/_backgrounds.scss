@@ -1,0 +1,5 @@
+@use '../tokens/colors' as c;
+
+.bg-primary { background-color: c.$monumental-bronze !important; color: c.$statuary-white !important; padding:8px; border-radius:6px; display:inline-block; }
+.bg-secondary { background-color: c.$capital-cream !important; color: c.$monumental-bronze !important; padding:8px; border-radius:6px; display:inline-block; }
+.bg-accent { background-color: c.$capital-blue !important; color: c.$statuary-white !important; padding:8px; border-radius:6px; display:inline-block; }

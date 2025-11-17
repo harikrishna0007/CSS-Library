@@ -1,0 +1,8 @@
+@use '../tokens/colors' as c;
+
+.text-primary { color: c.$monumental-bronze !important; }
+.text-secondary { color: c.$capital-dark-blue !important; }
+.text-accent { color: c.$capital-blue !important; }
+.text-light { color: c.$statuary-white !important; }
+.text-uppercase { text-transform: uppercase !important; }
+.text-center { text-align: center !important; }

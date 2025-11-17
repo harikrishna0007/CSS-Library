@@ -1,0 +1,28 @@
+@use 'tokens/colors' as colors;
+@use 'tokens/typography' as type;
+@use 'tokens/layout' as layout;
+
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+
+@use 'utilities/text';
+@use 'utilities/backgrounds';
+@use 'utilities/spacing';
+
+:root {
+  --wmata-primary: #{colors.$monumental-bronze};
+  --wmata-white: #{colors.$statuary-white};
+}
+html,body { height:100%; }
+body {
+  font-family: type.$font-text;
+  color: colors.$monumental-bronze;
+  background: colors.$statuary-white;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+h1,h2,h3 { margin:0 0 8px 0; color: colors.$monumental-bronze; }
+.h1 { font-size: 28px; font-family: type.$font-display; }
+.body-text { font-size: type.$font-size-base; }

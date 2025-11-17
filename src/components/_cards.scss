@@ -1,0 +1,10 @@
+@use '../tokens/colors' as c;
+@use '../tokens/layout' as l;
+
+.card {
+  background: c.$statuary-white;
+  border-radius: l.$border-radius;
+  box-shadow: l.$shadow-base;
+  padding: 16px;
+  color: c.$monumental-bronze;
+}

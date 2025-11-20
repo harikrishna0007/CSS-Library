@@ -1,0 +1,144 @@
+@use '../../tokens/colors' as c;
+@use '../../tokens/typography' as t;
+@use '../../tokens/layout' as l;
+
+/* ---------------------------------------------------
+   WMATA Iconography Customization (13×11 Grid)
+--------------------------------------------------- */
+
+.wmata-iconography-demo {
+  background: c.$capital-cream;
+  padding: 32px;
+  border-radius: l.$border-radius;
+  font-family: t.$font-text;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Two-column layout */
+.wmata-icon-row {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* Text block */
+.wmata-icon-text {
+  width: 260px;
+  font-size: 16px;
+  line-height: 22px;
+  color: c.$monumental-bronze;
+}
+
+/* Grid container */
+.wmata-icon-grid {
+  position: relative;
+  width: 320px;
+  height: 360px;
+
+  display: grid;
+  grid-template-columns: repeat(13, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+
+  background-image:
+    linear-gradient(#bb7373 1px, transparent 1px),
+    linear-gradient(90deg, #bb7373 1px, transparent 1px);
+  background-size:
+    calc(100% / 13) calc(100% / 11);
+
+  border: 2px solid #bb7373;
+  background-color: c.$statuary-white;
+  border-radius: 12px;
+}
+
+/* ----- Primary "M" Logo Block ----- */
+
+.wmata-icon-logo {
+  background: c.$monumental-bronze;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: c.$statuary-white;
+  font-size: 180px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ----- Bus Icon Block (simple shape mock) ----- */
+
+.wmata-icon-bus {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: c.$monumental-bronze;
+  border-radius: 40px;
+}
+
+/* Bus windows */
+.wmata-bus-window {
+  position: absolute;
+  background: c.$statuary-white;
+  border-radius: 12px;
+}
+
+.wmata-bus-window.top {
+  width: 70%;
+  height: 12%;
+  top: 30px;
+  left: 15%;
+}
+
+.wmata-bus-window.mid {
+  width: 70%;
+  height: 40%;
+  top: 80px;
+  left: 15%;
+}
+
+.wmata-bus-window.bottom-left {
+  width: 28%;
+  height: 16%;
+  bottom: 40px;
+  left: 10%;
+}
+
+.wmata-bus-window.bottom-right {
+  width: 28%;
+  height: 16%;
+  bottom: 40px;
+  right: 10%;
+}
+
+/* ----- Radii Circles (Red / Green / Blue) ----- */
+
+.wmata-radius {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 3px dashed red;
+  right: -20px;
+  bottom: -20px;
+}
+
+.wmata-radius.green {
+  width: 35px;
+  height: 35px;
+  border-color: green;
+  right: -10px;
+  top: 30%;
+}
+
+.wmata-radius.blue {
+  width: 17px;
+  height: 17px;
+  border-color: blue;
+  right: -10px;
+  bottom: 20%;
+}

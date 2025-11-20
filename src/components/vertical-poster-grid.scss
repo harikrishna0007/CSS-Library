@@ -1,0 +1,132 @@
+@use '../tokens/colors' as c;
+@use '../tokens/typography' as t;
+@use '../tokens/layout' as l;
+
+// ----------------------------
+// WMATA Vertical Poster Grid
+// ----------------------------
+
+.wmata-poster-grid-demo {
+  display: flex;
+  gap: 40px;
+  background: c.$capital-cream;
+  padding: 32px;
+  border-radius: 12px;
+}
+
+// Grid blocks
+.wmata-grid-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.wmata-grid-title {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: t.$font-text;
+}
+
+// Draw the 5x7 grid
+.wmata-grid {
+  width: 260px;
+  height: 460px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+
+  border: 2px solid #FF5555;
+
+  background-image:
+    linear-gradient(#FF5555 2px, transparent 2px),
+    linear-gradient(90deg, #FF5555 2px, transparent 2px);
+  background-size:
+    calc(100% / 5) calc(100% / 7);
+
+  position: relative;
+}
+
+// Footer (bottom row)
+.wmata-footer-row {
+  grid-column: 1 / -1;
+  grid-row: 7 / 8;
+  background: #d1d1d1;
+  font-family: t.$font-text;
+  font-size: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 70% footer visualization
+.wmata-footer-70 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+
+  background: #b2dff5;
+  font-size: 12px;
+  font-family: t.$font-text;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Primary logo mock
+.wmata-primary-logo {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+
+  width: 32px;
+  height: 32px;
+
+  background: c.$capital-blue;
+  color: c.$statuary-white;
+
+  font-weight: 700;
+  font-size: 22px;
+  border-radius: l.$border-radius;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Livery logo mock
+.wmata-livery-logo {
+  position: absolute;
+  bottom: 0;
+  right: 8px;
+
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.wmata-livery-m {
+  width: 28px;
+  height: 28px;
+
+  background: c.$capital-blue;
+  color: c.$statuary-white;
+
+  font-weight: 700;
+  border-radius: l.$border-radius;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wmata-livery-text {
+  font-size: 10px;
+  line-height: 10px;
+  font-weight: 700;
+  font-family: t.$font-text;
+}

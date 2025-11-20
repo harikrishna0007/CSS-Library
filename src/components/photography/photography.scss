@@ -1,0 +1,48 @@
+@use '../../tokens/colors' as c;
+@use '../../tokens/typography' as t;
+@use '../../tokens/layout' as l;
+
+/* Shared wrapper */
+.wmata-photo-page {
+  background: c.$capital-cream;
+  padding: 32px;
+  border-radius: l.$border-radius;
+  font-family: t.$font-text;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Title + description block */
+.wmata-photo-left {
+  width: 260px;
+}
+
+/* 2-column layout */
+.wmata-photo-row {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+}
+
+/* Image grid */
+.wmata-photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.wmata-photo-large {
+  grid-column: span 2;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.wmata-photo-small {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+}

@@ -9,3 +9,34 @@ $capital-blue: #0063ff !default;
 $union-plum: #ae3cfe !default;
 $national-mall-green: #09c9a1 !default;
 $dupont-glow: #fd5e01 !default;
+$cherry-blossom-pink:#fe57ad !default;
+$monument-mist:#04d1fe !default;
+$tidal-basin-moss:#bad505 !default;
+
+
+
+//color palette supporting shades
+
+$capital-blue-tint:#8cb9ff !default;
+$capital-blue-shade: color.scale($capital-blue, $lightness: -20%) !default;
+$capital-dark-blue-tint:#8cb9ff !default;
+$capital-dark-blue-shade: #003073 !default;
+$capital-red-tint:#f99cab !default;
+$capital-red-shade: #c61239 !default;
+$monumental-bronze-tint:#91776c !default;
+$monumental-bronze-shade: #5c4943 !default;
+$national-mall-green-tint:#90e7d5 !default;
+$national-mall-green-shade: #0a9179 !default;
+$union-plum-tint:#dba7ff !default;
+$union-plum-shade: #852ec2 !default;
+$dupont-glow-tint:#feb78d !default;
+$dupont-glow-shade: #e65b01 !default;
+$cherry-blossom-pink-tint:#feb3da !default;
+$cherry-blossom-pink-shade: #d71f87 !default;
+$monument-mist-tint:#8eeafe !default;
+$monument-mist-shade: #00899a !default;
+$tidal-basin-moss-tint:#e0ec8e !default;
+$tidal-basin-moss-shade: #82ad00 !default;
+$capital-cream-tint:#e0d4c3 !default;
+$capital-cream-shade: #b5a89c !default;
+$statuary-white-tint:#ffffff !default;

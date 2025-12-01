@@ -1,0 +1,46 @@
+@use '../../tokens/colors' as c;
+@use '../../tokens/typography' as t;
+@use '../../tokens/layout' as l;
+@use 'sass:color';
+
+.wmata-form-group {
+  margin-bottom: l.$spacing-md;
+  display: flex;
+  flex-direction: column;
+  gap: l.$spacing-xs;
+}
+
+.wmata-form-label {
+  font-family: t.$font-text;
+  font-size: t.$font-caption;
+  font-weight: 600;
+  color: c.$monumental-bronze;
+}
+
+.wmata-form-input {
+  padding: l.$spacing-sm;
+  border-radius: l.$border-radius;
+  border: 1px solid c.$capital-dark-blue;
+  font-family: t.$font-text;
+  font-size: t.$font-body;
+  background: c.$statuary-white;
+  color: c.$monumental-bronze;
+
+  &:focus {
+    outline: none;
+    border-color: c.$capital-blue;
+    box-shadow: 0 0 0 2px color.scale(c.$capital-blue, $alpha: -60%);
+  }
+}
+
+.wmata-form-error {
+  color: c.$capital-red;
+  font-size: t.$font-caption;
+  margin-top: l.$spacing-xs;
+}
+
+.wmata-form-helper {
+  color: c.$capital-blue-shade;
+  font-size: t.$font-caption;
+  margin-top: l.$spacing-xs;
+}

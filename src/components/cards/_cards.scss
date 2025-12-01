@@ -1,0 +1,38 @@
+@use '../../tokens/colors' as c;
+@use '../../tokens/layout' as l;
+@use '../../tokens/typography' as t;
+@use 'sass:color'; 
+
+.wmata-card {
+  background: c.$statuary-white;
+  border-radius: l.$border-radius;
+  padding: l.$spacing-md;
+  font-family: t.$font-text;
+
+  &.variant-flat {
+    box-shadow: none;
+  }
+
+  &.variant-shadow {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  }
+
+  &.variant-bordered {
+    border: 2px solid c.$monumental-bronze;
+  }
+}
+
+.wmata-card-header {
+  font-weight: 700;
+  margin-bottom: l.$spacing-sm;
+}
+
+.wmata-card-body {
+  font-size: t.$font-body;
+  margin-bottom: l.$spacing-sm;
+}
+
+.wmata-card-footer {
+  border-top: 1px solid c.$capital-cream;
+  padding-top: l.$spacing-sm;
+}

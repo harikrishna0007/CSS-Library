@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Cards/DetailedDocs" />
+# WMATA Cards
+
+Cards display grouped content using consistent spacing, borders, and typography from the WMATA design tokens.
+
+They can be used in:
+- ServiceNow UI Builder
+- React components
+- Plain HTML
+
+---
+
+## 📘 Available Classes
+
+| Class | Description |
+|-------|-------------|
+| `.wmata-card` | Base card container |
+| `.wmata-card-header` | Optional top header section |
+| `.wmata-card-body` | Main content section |
+| `.wmata-card-footer` | Footer area for actions |
+
+---
+
+## 📌 How to Use (ServiceNow)
+
+```html
+<div class="wmata-card">
+  <div class="wmata-card-header">Header</div>
+  <div class="wmata-card-body">
+    Body content goes here.
+  </div>
+  <div class="wmata-card-footer">
+    <button class="wmata-btn wmata-btn-primary">Submit</button>
+  </div>
+</div>

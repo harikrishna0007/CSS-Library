@@ -1,0 +1,19 @@
+@use '../../tokens/colors' as c;
+@use '../../tokens/layout' as l;
+
+.wmata-icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  fill: currentColor;
+
+  &--sm { width: 16px; height: 16px; }
+  &--md { width: 24px; height: 24px; }
+  &--lg { width: 32px; height: 32px; }
+
+  /* Color variants */
+  &--primary { color: c.$capital-blue; }
+  &--secondary { color: c.$monumental-bronze; }
+  &--danger { color: c.$capital-red; }
+  &--success { color: c.$national-mall-green; }
+}

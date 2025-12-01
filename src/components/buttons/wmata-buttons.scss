@@ -1,0 +1,102 @@
+@use '../../tokens/colors' as c;
+@use '../../tokens/typography' as t;
+@use '../../tokens/layout' as l;
+@use 'sass:color';
+
+/* Missing tokens corrected */
+$wmata-dark-blue-hover: color.adjust(c.$capital-dark-blue, $lightness: -12%);
+$wmata-blue-hover: color.adjust(c.$capital-blue, $lightness: -15%);
+
+/* ------------------------------------------------------
+   BASE WMATA BUTTON
+------------------------------------------------------- */
+.wmata-btn {
+  font-family: t.$font-text;
+  font-weight: 600;
+  border-radius: l.$border-radius;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+
+  transition: 
+    opacity .15s ease,
+    transform .06s ease,
+    background .15s ease,
+    color .15s ease,
+    font-weight .15s ease;
+}
+
+/* ------------------------------------------------------
+   PRIMARY
+------------------------------------------------------- */
+.wmata-btn-primary {
+  background: c.$monumental-bronze;
+  color: c.$statuary-white;
+  border: 1px solid color.adjust(c.$monumental-bronze, $lightness: -8%);
+
+  &:hover {
+    background: c.$capital-cream;
+    color: c.$monumental-bronze;
+    font-weight: 800;
+  }
+}
+
+/* ------------------------------------------------------
+   SECONDARY
+------------------------------------------------------- */
+.wmata-btn-secondary {
+  background: c.$capital-cream;
+  color: c.$monumental-bronze;
+  border: 1px solid color.adjust(c.$capital-cream, $lightness: -10%);
+
+  &:hover {
+    background: c.$monumental-bronze;
+    color: c.$statuary-white;
+    font-weight: 800;
+  }
+}
+
+/* ------------------------------------------------------
+   ACCENT (BLUE)
+------------------------------------------------------- */
+.wmata-btn-accent {
+  background: c.$capital-blue;
+  color: c.$statuary-white;
+  border: 1px solid color.adjust(c.$capital-blue, $lightness: -10%);
+
+  &:hover {
+    background: $wmata-dark-blue-hover;
+    color: c.$statuary-white;
+    font-weight: 800;
+  }
+}
+
+/* ------------------------------------------------------
+   PRIMARY V2 (DARK BLUE)
+------------------------------------------------------- */
+.wmata-btn-primaryv2 {
+  background: c.$capital-dark-blue;
+  color: c.$statuary-white;
+  border: 1px solid color.adjust(c.$capital-dark-blue, $lightness: -8%);
+
+  &:hover {
+    background: c.$capital-blue;
+    color: c.$statuary-white;
+    font-weight: 800;
+  }
+}
+
+/* ------------------------------------------------------
+   SECONDARY V2 (OUTLINE BLUE)
+------------------------------------------------------- */
+.wmata-btn-secondaryv2 {
+  background: none;
+  color: $wmata-blue-hover;
+  border: 2px solid c.$capital-dark-blue;
+
+  &:hover {
+    background: c.$capital-dark-blue;
+    color: c.$statuary-white;
+    font-weight: 800;
+  }
+}

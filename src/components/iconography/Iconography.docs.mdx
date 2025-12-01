@@ -1,0 +1,30 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Iconography/DetailedDocs" />
+
+# WMATA Iconography
+
+WMATA uses a consistent set of SVG icons to maintain visual clarity across ServiceNow and web applications.
+
+All icons follow a standard sizing scale and inherit typographic color using `currentColor`.
+
+---
+
+## 📦 How icons work
+
+Icons in this system are:
+
+- Inline SVG  
+- Using the `.wmata-icon` class  
+- Color controlled by `currentColor`  
+- Scalable with modifiers (`--sm`, `--md`, `--lg`)  
+- Styled via tokens
+
+---
+
+## 📌 Usage in HTML / ServiceNow
+
+```html
+<svg class="wmata-icon wmata-icon--primary" aria-hidden="true">
+  <use href="#icon-bus"></use>
+</svg>

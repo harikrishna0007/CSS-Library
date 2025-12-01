@@ -1,0 +1,24 @@
+@use "../../tokens/colors" as c;
+
+/* Background utilities */
+.wmata-bg-monumental-bronze   { background: c.$monumental-bronze; }
+.wmata-bg-statuary-white      { background: c.$statuary-white; }
+.wmata-bg-capital-red         { background: c.$capital-red; }
+.wmata-bg-capital-blue        { background: c.$capital-blue; }
+.wmata-bg-capital-dark-blue   { background: c.$capital-dark-blue; }
+.wmata-bg-national-mall-green { background: c.$national-mall-green; }
+.wmata-bg-union-plum          { background: c.$union-plum; }
+
+/* Text utilities */
+.wmata-text-monumental-bronze   { color: c.$monumental-bronze; }
+.wmata-text-statuary-white      { color: c.$statuary-white; }
+.wmata-text-capital-red         { color: c.$capital-red; }
+.wmata-text-capital-blue        { color: c.$capital-blue; }
+.wmata-text-capital-dark-blue   { color: c.$capital-dark-blue; }
+.wmata-text-national-mall-green { color: c.$national-mall-green; }
+.wmata-text-union-plum          { color: c.$union-plum; }
+
+/* Borders */
+.wmata-border-capital-red       { border-color: c.$capital-red !important; }
+.wmata-border-capital-blue      { border-color: c.$capital-blue !important; }
+.wmata-border-monumental-bronze { border-color: c.$monumental-bronze !important; }

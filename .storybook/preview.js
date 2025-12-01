@@ -1,6 +1,6 @@
-import '../src/index.scss';
+import "../dist/wmata-theme.css";
 
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: { expanded: true },
+  layout: 'padded',
+  controls: { expanded: true }
 };

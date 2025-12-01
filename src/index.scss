@@ -2,8 +2,11 @@
 @use 'tokens/typography' as type;
 @use 'tokens/layout' as layout;
 
-@use 'components/buttons';
-@use 'components/cards';
+@use 'components/buttons/wmata-buttons.scss';
+@use 'components/cards/cards.scss';
+@use 'components/colors/wmata-colors.scss';
+@use 'components/forms/wmata-forms.scss';
+
 @use 'components/forms';
 @use 'components/iconography/iconography.scss';
 @use 'components/iconography/iconography-usage.scss';

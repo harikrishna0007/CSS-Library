@@ -1,0 +1,30 @@
+import { Meta, Story, Source } from '@storybook/blocks';
+
+<Meta title="Components/Forms/DetailedDocs" />
+
+# WMATA Form Elements
+
+Standardized form styles that follow WMATA color, spacing, and typography rules.
+
+---
+
+## 📌 Available Classes
+
+| Class | Description |
+|------|-------------|
+| `.wmata-form-group` | Wrapper for label + input |
+| `.wmata-form-label` | Input label text |
+| `.wmata-form-input` | Input field styling |
+| `.wmata-form-error` | Error message |
+| `.wmata-form-helper` | Helper description text |
+
+---
+
+## How to Use (ServiceNow)
+
+```html
+<div class="wmata-form-group">
+  <label class="wmata-form-label">Email</label>
+  <input class="wmata-form-input" type="email" placeholder="Enter email" />
+  <div class="wmata-form-helper">We never share your email.</div>
+</div>

@@ -3,3 +3,24 @@ $font-text: 'Helvetica Now Text', -apple-system, 'Segoe UI', Roboto, 'Helvetica 
 
 $font-size-base: 16px !default;
 $font-size-lg: 20px !default;
+
+// src/tokens/_typography.scss
+
+// Font families
+$font-display: 'Helvetica Now Display', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
+$font-text: 'Helvetica Now Text', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
+
+// Font sizes
+$font-size-base: 16px !default;   // standard body text
+$font-size-sm: 14px !default;     // small UI
+$font-size-lg: 20px !default;     // headings
+
+// LINE HEIGHTS
+$line-height-base: 1.5 !default;
+$line-height-heading: 1.2 !default;
+
+// WMATA SPECIAL TOKENS
+$font-body: $font-size-base !default;   // <----- THIS WAS MISSING!
+$font-caption: $font-size-sm !default;
+$font-heading: $font-size-lg !default;
+

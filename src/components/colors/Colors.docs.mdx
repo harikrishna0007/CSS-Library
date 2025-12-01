@@ -1,0 +1,35 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Colors/DetailedDocs" />
+
+# WMATA Color System
+
+WMATA uses a distinct color palette based on brand identity.  
+These colors are shared across ServiceNow, React, and plain HTML.
+
+Use the classes directly or reference the SCSS variables in your own styles.
+
+---
+
+## 🎨 Brand Colors
+
+| Token | Hex | Preview |
+|------|------|---------|
+| `$monumental-bronze` | `#4C3B2A` | <div style={{width:"28px",height:"28px",background:"#4C3B2A"}}/> |
+| `$statuary-white` | `#F5F5E7` | <div style={{width:"28px",height:"28px",background:"#F5F5E7",border:"1px solid #ccc"}}/> |
+| `$capital-red` | `#D73F3A` | <div style={{width:"28px",height:"28px",background:"#D73F3A"}}/> |
+| `$capital-blue` | `#0077FF` | <div style={{width:"28px",height:"28px",background:"#0077FF"}}/> |
+| `$capital-dark-blue` | `#00467F` | <div style={{width:"28px",height:"28px",background:"#00467F"}}/> |
+| `$national-mall-green` | `#00826F` | <div style={{width:"28px",height:"28px",background:"#00826F"}}/> |
+| `$union-plum` | `#9C35FF` | <div style={{width:"28px",height:"28px",background:"#9C35FF"}}/> |
+
+---
+
+## 📌 How To Use (ServiceNow)
+
+### Background class
+
+```html
+<div class="wmata-bg-monumental-bronze">
+  Bronze section
+</div>

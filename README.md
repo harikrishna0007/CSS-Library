@@ -7,17 +7,18 @@
 npm install
 ```
 
-2. Run Storybook (dev)
+2. Build the CSS for ServiceNow
+```bash
+npm run build
+```
+3. Run Storybook (dev)
 ```bash
 npm run storybook
 ```
 
 Storybook will run at http://localhost:6006
 
-3. Build the CSS for ServiceNow
-```bash
-npm run build
-```
+
 This outputs `dist/wmata-theme.css` which you can upload to ServiceNow as a UI Script or Theme CSS include.
 
 Notes:

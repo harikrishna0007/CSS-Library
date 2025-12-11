@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default { title: 'Components/link' };
+export default { title: 'Components/Link', };
 
 export const Inputs = () => (
   <div style={{maxWidth:480}}>

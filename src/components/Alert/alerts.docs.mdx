@@ -1,0 +1,44 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Alert/DetailedDocs" />
+
+---
+Title: "Alert/Docs"
+---
+
+# WMATA Alerts  
+Reusable alert styles for ServiceNow widgets, React components, and plain HTML.
+
+Alerts follow WMATA’s color system and typography tokens.  
+Use them to communicate success, errors, warnings, and informational messages.
+
+---
+
+## Available Classes
+
+| Class | Purpose |
+|-------|---------|
+| `.wmata-alert` | Base alert container |
+| `.wmata-alert-success` | Success / confirmation message |
+| `.wmata-alert-error` | Error / failure message |
+| `.wmata-alert-warning` | Warning / caution message |
+| `.wmata-alert-info` | Informational / neutral message |
+| `.wmata-alert-title` | Optional bold title inside the alert |
+| `.wmata-alert-content` | Wraps the body text of the alert |
+| `.wmata-alert-close` | Optional close (dismiss) button |
+
+---
+
+## How To Use (ServiceNow)
+
+Render alerts conditionally using Angular (`ng-if`) inside your widget template.
+
+### Success Example
+
+```html
+<div class="wmata-alert wmata-alert-success">
+  <div class="wmata-alert-content">
+    <div class="wmata-alert-title">Success</div>
+    Your changes have been saved successfully.
+  </div>
+</div>

@@ -1,0 +1,72 @@
+// Typography hierarchy demo (campaign / brand ads)
+
+.wmata-hierarchy-page {
+  background: #f5ece2;      // light beige page background
+  padding: 24px;
+}
+
+.wmata-hierarchy-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left copy column (rules text) */
+.wmata-hierarchy-side {
+  max-width: 260px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Right main example block */
+.wmata-hierarchy-main {
+  background: #ffffff;
+  padding: 32px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+/* Headline */
+.wmata-h-headline {
+  font-family: "Helvetica Now Display", -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 0.95;
+  text-transform: lowercase;    // as spec says
+  color: var(--wmata-primary);
+  margin: 0 0 24px 0;
+}
+
+/* Subhead */
+.wmata-h-subhead {
+  font-family: "Helvetica Now Text", -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 16px 0;
+  color: var(--wmata-text-main);
+}
+
+/* Body copy */
+.wmata-h-body {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 0 12px 0;
+}
+
+/* Tagline */
+.wmata-h-tagline {
+  font-family: "Helvetica Now Text", -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: lowercase;
+  margin: 12px 0 4px 0;
+}
+
+/* Footer / URL */
+.wmata-h-footer {
+  font-size: 13px;
+  margin: 0;
+}

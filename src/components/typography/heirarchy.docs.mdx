@@ -1,0 +1,70 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Typography/Hierarchy/DetailedDocs" />
+
+---
+
+---
+
+# WMATA Typography — Hierarchy
+
+Hierarchy styles define how to structure type for **campaign, awareness,
+and hero layouts** (like “your guide to metro bus”).
+
+These classes can be used in **ServiceNow widgets**, **React apps**, or
+plain HTML wherever you need a strong WMATA-branded message.
+
+---
+
+## Available Classes
+
+### Text levels
+
+| Class name             | Role            | Example content                           |
+|------------------------|-----------------|-------------------------------------------|
+| `.wmata-h-headline`    | Main headline   | `your guide to metro bus`                 |
+| `.wmata-h-subhead`     | Subhead         | `Courtesy metro bus stops`                |
+| `.wmata-h-body`        | Body copy       | Main paragraph explaining the message     |
+| `.wmata-h-tagline`     | Tagline         | `your safety. your metro.`                |
+| `.wmata-h-footer`      | Footer / URL    | `More information: wmata.com/alerts`      |
+
+### Layout helpers
+
+| Class name                  | Description |
+|----------------------------|-------------|
+| `.wmata-hierarchy-page`    | Optional beige page background + padding. |
+| `.wmata-hierarchy-layout`  | Two-column flex layout (rules + example). |
+| `.wmata-hierarchy-side`    | Left column with explanatory copy. |
+| `.wmata-hierarchy-main`    | Right column card containing the campaign example. |
+
+---
+
+## How To Use (ServiceNow / plain HTML)
+
+Minimal usage with only the text levels:
+
+```html
+<div class="wmata-panel">
+  <h1 class="wmata-h-headline">
+    your<br>
+    guide to<br>
+    metro bus
+  </h1>
+
+  <p class="wmata-h-subhead">
+    Courtesy metro bus stops
+  </p>
+
+  <p class="wmata-h-body">
+    Late night bus travels? Ask your metro bus operator for a courtesy
+    stop to ensure a safer journey home.
+  </p>
+
+  <p class="wmata-h-tagline">
+    your safety. your metro.
+  </p>
+
+  <p class="wmata-h-footer">
+    More information: wmata.com/alerts
+  </p>
+</div>

@@ -1,6 +1,7 @@
-@use '../tokens/colors' as c;
-@use '../tokens/layout' as l;
+@use './../../tokens/colors' as c;
+@use '../../tokens/layout' as l;
 
+@use 'sass:color'; 
 
 .link {
   color: c.$monumental-bronze;

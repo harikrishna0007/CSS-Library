@@ -9,13 +9,13 @@
     "build-storybook": "storybook build",
     "watch": "sass --watch src/index.scss dist/wmata-theme.css"
   },
-"devDependencies": {
-  "@storybook/react-vite": "^8.6.14",
-  "@storybook/addon-essentials": "^8.6.14",
-  "@storybook/addon-interactions": "^8.6.14",
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-  "sass": "^1.80.0",
-  "vite": "^5.4.0"
-}
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-interactions": "^8.6.14",
+    "@storybook/react-vite": "^8.6.14",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sass": "^1.80.0",
+    "vite": "^7.2.7"
+  }
 }

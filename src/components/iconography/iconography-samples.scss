@@ -31,3 +31,25 @@
   stroke: c.$monumental-bronze;
   fill: c.$monumental-bronze;
 }
+.wmata-icon {
+  fill: currentColor;
+  stroke: none;
+
+  &--primary {
+    color: c.$monumental-bronze;
+  }
+
+  &--inverse {
+    color: c.$statuary-white;
+  }
+
+  &--xl {
+    width: 96px;
+    height: 96px;
+  }
+
+  &--lg {
+    width: 48px;
+    height: 48px;
+  }
+}

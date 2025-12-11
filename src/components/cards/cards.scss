@@ -1,0 +1,82 @@
+@use '../../tokens/colors' as c;
+@use '../../tokens/layout' as l;
+@use '../../tokens/typography' as t;
+@use 'sass:color';
+
+.wmata-card {
+  background: c.$statuary-white;
+  border-radius: l.$border-radius;
+  padding: l.$spacing-lg; // More breathing room
+  font-family: t.$font-text;
+  border: 1px solid color.scale(c.$monumental-bronze, $lightness: 45%);
+
+  // 👇 Better default shadow (clean & professional)
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+
+  transition:
+    box-shadow 0.15s ease,
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    background 0.15s ease;
+
+  // Hover lift
+  &:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    border-color: c.$monumental-bronze;
+        background: c.$capital-cream;
+  
+  }
+}
+
+/* ---------- CARD HEADER ---------- */
+.wmata-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: l.$spacing-md;
+  gap: l.$spacing-md;
+
+  h2, h3, h4 {
+    margin: 0;
+    font-weight: 700;
+    color: c.$monumental-bronze;
+  }
+}
+
+/* Secondary text under title */
+.wmata-card-subheader {
+  margin-top: l.$spacing-xs;
+  color: color.scale(c.$monumental-bronze, $lightness: 20%);
+  font-weight: 600;
+}
+
+/* ---------- CARD BODY ---------- */
+.wmata-card-body {
+  font-size: t.$font-body;
+  line-height: 1.6;
+  margin-bottom: l.$spacing-md;
+
+  .wmata-info-row {
+    display: flex;
+    margin-bottom: l.$spacing-sm;
+  }
+
+  .wmata-info-label {
+    width: 150px;
+    font-weight: 600;
+    color: c.$monumental-bronze;
+  }
+
+  .wmata-info-value {
+    color: c.$monumental-bronze;
+  }
+}
+
+/* ---------- CARD FOOTER ---------- */
+.wmata-card-footer {
+  border-top: 1px solid c.$capital-cream;
+  padding-top: l.$spacing-sm;
+  margin-top: l.$spacing-sm;
+}

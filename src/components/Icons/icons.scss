@@ -1,0 +1,41 @@
+@use '../../tokens/layout' as l;
+
+/* Base icon */
+.wmata-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+
+  vertical-align: middle;
+}
+
+/* Sizes */
+.wmata-icon--sm { width: 16px; height: 16px; }
+.wmata-icon--md { width: 24px; height: 24px; }
+.wmata-icon--lg { width: 32px; height: 32px; }
+.wmata-icon--xl { width: 40px; height: 40px; }
+
+/* Optional disabled look */
+.wmata-icon.is-disabled { opacity: 0.45; }
+
+/**
+ * IMPORTANT:
+ * dist/ is the output folder, Icons/ is at root.
+ * So from dist/*.css -> ../Icons/*.png
+ */
+//$icon-path: "../Icons";
+$icon-path: "../../Icons";
+
+/* Per-icon classes */
+.wmata-icon--bus         { background-image: url("#{$icon-path}/bus.png"); }
+.wmata-icon--rail        { background-image: url("#{$icon-path}/rail.png"); }
+.wmata-icon--wheelchair  { background-image: url("#{$icon-path}/wheelchair.png"); }
+.wmata-icon--escalator   { background-image: url("#{$icon-path}/escalator.png"); }
+.wmata-icon--airplane    { background-image: url("#{$icon-path}/airplane.png"); }
+.wmata-icon--arrow-right { background-image: url("#{$icon-path}/arrow-right.png"); }
+.wmata-icon--no-entry    { background-image: url("#{$icon-path}/no-entry.png"); }
+.wmata-icon--elevator    { background-image: url("#{$icon-path}/elevator.png"); }

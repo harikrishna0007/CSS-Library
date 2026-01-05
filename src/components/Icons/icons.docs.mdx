@@ -1,0 +1,89 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Foundations/Iconography/Icons (PNG)/DetailedDocs" />
+
+---
+title: "Iconography/Docs"
+---
+
+# WMATA Icons  
+Reusable icon styles for ServiceNow widgets, React components, and plain HTML.
+
+Icons are provided as **PNG assets** and exposed via **CSS utility classes**.  
+They are designed to visually align with WMATA signage and UI patterns.
+
+---
+
+## Available Icons
+
+<div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "24px" }}>
+  <div>
+    <span class="wmata-icon wmata-icon--bus wmata-icon--lg"></span>
+    <div>Bus</div>
+  </div>
+  <div>
+    <span class="wmata-icon wmata-icon--rail wmata-icon--lg"></span>
+    <div>Rail</div>
+  </div>
+  <div>
+    <span class="wmata-icon wmata-icon--wheelchair wmata-icon--lg"></span>
+    <div>Wheelchair</div>
+  </div>
+  <div>
+    <span class="wmata-icon wmata-icon--escalator wmata-icon--lg"></span>
+    <div>Escalator</div>
+  </div>
+
+  <div>
+    <span class="wmata-icon wmata-icon--airplane wmata-icon--lg"></span>
+    <div>Airplane</div>
+  </div>
+  <div>
+    <span class="wmata-icon wmata-icon--arrow-right wmata-icon--lg"></span>
+    <div>Arrow Right</div>
+  </div>
+  <div>
+    <span class="wmata-icon wmata-icon--no-entry wmata-icon--lg"></span>
+    <div>No Entry</div>
+  </div>
+  <div>
+    <span class="wmata-icon wmata-icon--elevator wmata-icon--lg"></span>
+    <div>Elevator</div>
+  </div>
+</div>
+
+---
+
+## Available Classes
+
+| Class | Purpose |
+|------|---------|
+| `.wmata-icon` | Base icon styling |
+| `.wmata-icon--bus` | Bus icon |
+| `.wmata-icon--rail` | Rail icon |
+| `.wmata-icon--wheelchair` | Accessibility / wheelchair |
+| `.wmata-icon--escalator` | Escalator |
+| `.wmata-icon--airplane` | Airport / flight |
+| `.wmata-icon--arrow-right` | Directional arrow |
+| `.wmata-icon--no-entry` | No entry / restricted |
+| `.wmata-icon--elevator` | Elevator |
+| `.wmata-icon--sm` | Small size |
+| `.wmata-icon--md` | Medium size (default) |
+| `.wmata-icon--lg` | Large size |
+| `.wmata-icon--xl` | Extra large size |
+
+---
+
+## How To Use (ServiceNow)
+
+Icons are rendered using a `<span>` element with the appropriate CSS classes.
+
+```html
+<span class="wmata-icon wmata-icon--bus wmata-icon--md" aria-label="Bus"></span>
+<span class="wmata-icon wmata-icon--elevator wmata-icon--lg" aria-label="Elevator"></span>
+
+
+<button class="wmata-btn wmata-btn-primary">
+  <span class="wmata-icon wmata-icon--arrow-right wmata-icon--sm"></span>
+  Continue
+</button>

@@ -9,6 +9,8 @@
 @use 'components/colors/wmata-colors.scss';
 @use 'components/forms/wmata-forms.scss';
 @use 'components/Badge/badges.scss';
+@use 'components/Icons/icons.scss';
+@use 'components/Tables/table.scss';
 
 @use 'components/forms';
 @use 'components/iconography/iconography.scss';
@@ -16,12 +18,15 @@
 @use 'components/iconography/iconography-samples.scss';
 @use 'components/metro-squares.scss';
 @use 'components/vertical-poster-grid.scss';
-@use "components/typography/hierarchy.scss";
+@use 'components/Typo/typo.scss';
 
 
 @use 'utilities/text';
 @use 'utilities/backgrounds';
 @use 'utilities/spacing';
+
+
+@use "components/typography/hierarchy.scss";
 
 :root {
   --wmata-primary: #{colors.$monumental-bronze};
@@ -36,6 +41,5 @@ body {
   -moz-osx-font-smoothing:grayscale;
 }
 
-h1,h2,h3 { margin:0 0 8px 0; color: colors.$monumental-bronze; }
-.h1 { font-size: 28px; font-family: type.$font-display; }
+//h1,h2,h3 { margin:0 0 8px 0; color: colors.$monumental-bronze; }
 .body-text { font-size: type.$font-size-base; }

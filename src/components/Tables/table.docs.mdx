@@ -1,0 +1,55 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Tables/DetailedDocs" />
+
+---
+title: "Tables/Docs"
+---
+
+# WMATA Tables  
+Reusable table styles for ServiceNow widgets, React components, and plain HTML.
+
+Tables are designed for dense operational data (attendance, approvals, assets) with clear headers, spacing, and hover states.
+
+---
+
+## Available Classes
+
+| Class | Purpose |
+|------|---------|
+| `.wmata-table-wrap` | Scroll container + border + radius |
+| `.wmata-table` | Base table styles |
+| `.wmata-table--zebra` | Zebra striping |
+| `.wmata-table--compact` | Reduced padding for dense data |
+| `.wmata-table--bordered` | Stronger grid lines |
+| `.wmata-td--num` | Right-align numeric cells |
+| `.wmata-table-empty` | Empty state message |
+
+---
+
+## How To Use (ServiceNow)
+
+```html
+<div class="wmata-table-wrap">
+  <table class="wmata-table wmata-table--zebra">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Employee</th>
+        <th>Type</th>
+        <th class="wmata-td--num">Minutes</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>12/18/2025</td>
+        <td>Hari K</td>
+        <td>Tardy</td>
+        <td class="wmata-td--num">12</td>
+        <td><span class="wmata-table-status wmata-table-status--warning">Pending</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

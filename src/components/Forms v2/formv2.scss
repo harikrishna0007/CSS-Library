@@ -1,0 +1,74 @@
+/* --- Outer border + consistent width --- */
+.wmata-form-card {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.14);   /* visible border */
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* --- Body spacing --- */
+.wmata-form-card__body {
+  padding: 22px;
+}
+
+/* --- Grid: 1 column on mobile, 2 equal columns on desktop --- */
+.wmata-form-grid {
+  display: grid;
+  grid-template-columns: 1fr;           /* mobile */
+  gap: 18px;
+}
+
+/* Equal columns + consistent layout */
+@media (min-width: 900px) {
+  .wmata-form-grid--two-col {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); /* ✅ true equal widths */
+    column-gap: 22px;
+    row-gap: 18px;
+  }
+}
+
+/* --- Field wrapper --- */
+.wmata-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0; /* important so inputs don't overflow */
+}
+
+/* Make certain fields span both columns */
+.wmata-field--full {
+  grid-column: 1 / -1;
+}
+
+/* --- Inputs fill their column fully --- */
+.wmata-input,
+.wmata-select,
+.wmata-textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+/* Focus ring */
+.wmata-input:focus,
+.wmata-select:focus,
+.wmata-textarea:focus {
+  outline: none;
+  border-color: rgba(0,0,0,0.35);
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.08);
+}
+
+/* --- Footer actions look like a section --- */
+.wmata-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  margin-top: 6px;
+}

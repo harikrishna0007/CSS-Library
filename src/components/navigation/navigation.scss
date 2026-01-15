@@ -1,0 +1,212 @@
+@use '../../tokens/colors' as c;
+@use '../../tokens/layout' as l;
+@use '../../tokens/typography' as t;
+
+/* =========================
+   BREADCRUMBS
+   ========================= */
+.wmata-breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: t.$font-text;
+  font-size: t.$font-size-sm;
+  color: c.$monumental-bronze;
+}
+
+.wmata-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wmata-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.wmata-breadcrumb a:hover {
+  text-decoration: underline;
+  opacity: 1;
+  
+    color: c.$capital-blue;
+    border-color: c.$capital-blue;
+}
+
+.wmata-breadcrumb-sep {
+  opacity: 0.5;
+}
+
+.wmata-breadcrumb-current {
+  font-weight: t.$weight-bold;
+  opacity: 1;
+}
+
+/* =========================
+   TABS (segmented underline tabs)
+   ========================= */
+.wmata-tabs {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  font-family: t.$font-text;
+}
+
+.wmata-tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 4px;
+  cursor: pointer;
+  user-select: none;
+
+  font-size: t.$font-size-base;
+  font-weight: t.$weight-bold;
+  color: c.$monumental-bronze;
+  opacity: 0.75;
+
+  background: transparent;
+  border: 0;
+}
+
+.wmata-tab:hover {
+  opacity: 1;
+  color: c.$capital-blue;
+  border-color: c.$capital-blue;
+  
+}
+
+.wmata-tab.is-active {
+  opacity: 1;
+}
+
+.wmata-tab.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background: c.$monumental-bronze;
+}
+
+.wmata-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: t.$weight-bold;
+  background: rgba(0,0,0,0.08);
+  opacity: 0.9;
+}
+
+.wmata-tab-panel {
+  padding: l.$spacing-md 0;
+}
+
+/* Disabled tab */
+.wmata-tab:disabled,
+.wmata-tab.is-disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* =========================
+   SIDE NAV
+   ========================= */
+.wmata-sidenav {
+  width: 260px;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: l.$border-radius;
+  background: c.$statuary-white;
+  overflow: hidden;
+}
+
+.wmata-sidenav-header {
+  padding: l.$spacing-md;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+  font-family: t.$font-text;
+  font-weight: t.$weight-bold;
+}
+
+.wmata-sidenav-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+}
+
+.wmata-sidenav-item {
+  margin: 0;
+  padding: 0;
+}
+
+.wmata-sidenav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  font-family: t.$font-text;
+  font-size: t.$font-size-base;
+  font-weight: t.$weight-bold;
+
+  color: c.$monumental-bronze;
+  text-decoration: none;
+
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.wmata-sidenav-link:hover {
+  background: rgba(0,0,0,0.03);
+  opacity: 1;
+}
+
+.wmata-sidenav-link.is-active {
+  background: rgba(0,0,0,0.06);
+  opacity: 1;
+}
+
+.wmata-sidenav-sublist {
+  list-style: none;
+  margin: 6px 0 0 0;
+  padding: 0 0 0 12px;
+}
+
+.wmata-sidenav-sublink {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 10px;
+
+  font-family: t.$font-text;
+  font-size: t.$font-size-sm;
+  font-weight: t.$weight-bold;
+
+  color: c.$monumental-bronze;
+  text-decoration: none;
+
+  opacity: 0.75;
+}
+
+.wmata-sidenav-sublink:hover {
+  background: rgba(0,0,0,0.03);
+  opacity: 1;
+}
+
+.wmata-sidenav-sublink.is-active {
+  background: rgba(0,0,0,0.06);
+  opacity: 1;
+}

@@ -2,7 +2,7 @@
 import React from "react";
 
 export default {
-  title: "Components/Forms/Overview",
+  title: "Components/Forms V1",
 };
 
 export const Overview = () => (

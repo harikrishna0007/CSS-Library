@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Navigation/DetailedDocs" />
+
+---
+title: "Navigation/Docs"
+---
+
+# WMATA Navigation
+
+Navigation components help users **understand location**, **switch context**, and **move between sections** of an application.
+
+These patterns are designed for **ServiceNow widgets**, **React applications**, and **plain HTML** usage, following WMATA typography and spacing tokens.
+
+---
+
+## Components Included
+
+- **Breadcrumbs** – show page hierarchy and current location  
+- **Tabs** – switch between related views within a page  
+- **Side Navigation** – primary navigation for applications and dashboards  
+
+---
+
+## Breadcrumbs
+
+Use breadcrumbs to show **hierarchical context** and allow users to navigate back to parent pages.
+
+### Usage
+- Place near the top of the page
+- Use for multi-level navigation
+- The last item represents the current page
+
+### Markup
+
+```html
+<nav class="wmata-breadcrumbs" aria-label="Breadcrumb">
+  <span class="wmata-breadcrumb">
+    <a href="#">Home</a>
+    <span class="wmata-breadcrumb-sep">/</span>
+  </span>
+
+  <span class="wmata-breadcrumb">
+    <a href="#">Operations</a>
+    <span class="wmata-breadcrumb-sep">/</span>
+  </span>
+
+  <span class="wmata-breadcrumb-current">Timecards</span>
+</nav>

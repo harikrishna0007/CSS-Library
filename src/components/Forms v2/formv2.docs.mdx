@@ -1,0 +1,79 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Form V2/DetailedDocs" />
+
+---
+title: "Form V2/Docs"
+---
+
+# WMATA Form Shell
+
+The **Form Shell** is a reusable layout wrapper for ServiceNow widgets and web apps.  
+It provides a consistent WMATA-styled form structure:
+
+- Card container with header + subtitle
+- Standard field spacing
+- WMATA input/select/textarea styling
+- Optional alert/message area
+- Optional action footer (buttons)
+
+---
+
+## Available Classes
+
+| Class | Purpose |
+|------|---------|
+| `.wmata-form-card` | Main form card container |
+| `.wmata-form-card__header` | Header section (title + subtitle) |
+| `.wmata-form-card__title` | Title text |
+| `.wmata-form-card__subtitle` | Subtitle / helper description |
+| `.wmata-form-card__body` | Body section container |
+| `.wmata-form-grid` | Stacked field layout |
+| `.wmata-form-grid--two-col` | Two-column layout (desktop) |
+| `.wmata-field` | Field block wrapper |
+| `.wmata-label` | Field label |
+| `.wmata-input` | Input styling |
+| `.wmata-select` | Select styling |
+| `.wmata-textarea` | Textarea styling |
+| `.wmata-help` | Helper / hint text |
+| `.wmata-form-actions` | Footer actions row |
+
+---
+
+## How To Use (ServiceNow)
+
+Use the form shell inside your widget template.  
+Angular bindings (`ng-model`, `ng-change`, `ng-options`) work normally.
+
+```html
+<div class="wmata-form-card">
+  <div class="wmata-form-card__header">
+    <h2 class="wmata-form-card__title">Modify/Delete Tardy & Attendance Records</h2>
+    <p class="wmata-form-card__subtitle">Request approval to modify/delete records</p>
+  </div>
+
+  <div class="wmata-form-card__body">
+    <div class="wmata-form-grid">
+
+      <div class="wmata-field">
+        <label class="wmata-label">Employees to View:</label>
+        <select class="wmata-select" ng-model="c.data.viewMode"></select>
+      </div>
+
+      <div class="wmata-field">
+        <label class="wmata-label">Submitter:</label>
+        <input class="wmata-input" ng-model="c.data.submitterName" readonly />
+      </div>
+
+      <div class="wmata-alert wmata-alert-info">
+        <div class="wmata-alert-content">Please choose a record type to load records...</div>
+      </div>
+
+      <div class="wmata-form-actions">
+        <button class="wmata-btn wmata-btn-secondary" type="button">Cancel</button>
+        <button class="wmata-btn wmata-btn-primary" type="button">Submit</button>
+      </div>
+
+    </div>
+  </div>
+</div>

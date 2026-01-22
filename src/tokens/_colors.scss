@@ -1,42 +1,42 @@
-@use 'sass:color';
+// src/tokens/colors.scss
+@use "./_colors.palette" as p;
 
-$monumental-bronze: #3a2c26 !default;
-$statuary-white: #ffffff !default;
-$capital-cream: #f4e9e0 !default;
-$capital-red: #f22245 !default;
-$capital-dark-blue: #004ba6 !default;
-$capital-blue: #0063ff !default;
-$union-plum: #ae3cfe !default;
-$national-mall-green: #09c9a1 !default;
-$dupont-glow: #fd5e01 !default;
-$cherry-blossom-pink:#fe57ad !default;
-$monument-mist:#04d1fe !default;
-$tidal-basin-moss:#bad505 !default;
+/* Brand aliases (your original names mapped to palette stops) */
+$monumental-bronze: p.palette(p.$bronze, 700) !default;  // #3a2c26
+$statuary-white: p.palette(p.$grayscale, 50) !default;   // #ffffff
 
+$capital-cream: p.palette(p.$cream, 200) !default;       // #f4e9e0
+$capital-cream-tint: p.palette(p.$cream, 500) !default;  // lighter/different stop you used
+$capital-cream-shade: p.palette(p.$cream, 700) !default;
 
+$capital-blue: p.palette(p.$blue, 500) !default;
+$capital-blue-tint: p.palette(p.$blue, 200) !default;
+$capital-blue-shade: p.palette(p.$blue, 700) !default;
 
-//color palette supporting shades
+$capital-dark-blue: p.palette(p.$darkblue, 500) !default;
+$capital-dark-blue-tint: p.palette(p.$darkblue, 200) !default;
+$capital-dark-blue-shade: p.palette(p.$darkblue, 700) !default;
 
-$capital-blue-tint:#8cb9ff !default;
-$capital-blue-shade: color.scale($capital-blue, $lightness: -20%) !default;
-$capital-dark-blue-tint:#8cb9ff !default;
-$capital-dark-blue-shade: #003073 !default;
-$capital-red-tint:#f99cab !default;
-$capital-red-shade: #c61239 !default;
-$monumental-bronze-tint:#91776c !default;
-$monumental-bronze-shade: #5c4943 !default;
-$national-mall-green-tint:#90e7d5 !default;
-$national-mall-green-shade: #0a9179 !default;
-$union-plum-tint:#dba7ff !default;
-$union-plum-shade: #852ec2 !default;
-$dupont-glow-tint:#feb78d !default;
-$dupont-glow-shade: #e65b01 !default;
-$cherry-blossom-pink-tint:#feb3da !default;
-$cherry-blossom-pink-shade: #d71f87 !default;
-$monument-mist-tint:#8eeafe !default;
-$monument-mist-shade: #00899a !default;
-$tidal-basin-moss-tint:#e0ec8e !default;
-$tidal-basin-moss-shade: #82ad00 !default;
-$capital-cream-tint:#e0d4c3 !default;
-$capital-cream-shade: #b5a89c !default;
-$statuary-white-tint:#ffffff !default;
+$capital-red: p.palette(p.$red, 500) !default;
+$capital-red-tint: p.palette(p.$red, 200) !default;
+$capital-red-shade: p.palette(p.$red, 700) !default;
+
+$cherry-blossom-pink: p.palette(p.$pink, 500) !default;
+$cherry-blossom-pink-tint: p.palette(p.$pink, 200) !default;
+$cherry-blossom-pink-shade: p.palette(p.$pink, 700) !default;
+
+$dupont-glow: p.palette(p.$orange, 500) !default;
+$dupont-glow-tint: p.palette(p.$orange, 200) !default;
+$dupont-glow-shade: p.palette(p.$orange, 700) !default;
+
+$monument-mist: p.palette(p.$mist, 500) !default;
+$monument-mist-tint: p.palette(p.$mist, 200) !default;
+$monument-mist-shade: p.palette(p.$mist, 700) !default;
+
+$national-mall-green: p.palette(p.$green, 500) !default;
+$national-mall-green-tint: p.palette(p.$green, 200) !default;
+$national-mall-green-shade: p.palette(p.$green, 700) !default;
+
+$tidal-basin-moss: p.palette(p.$moss, 500) !default;
+$tidal-basin-moss-tint: p.palette(p.$moss, 200) !default;
+$tidal-basin-moss-shade: p.palette(p.$moss, 700) !default;

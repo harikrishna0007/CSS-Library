@@ -1,5 +1,5 @@
 @use '../tokens/layout' as l;
 @for $i from 1 through 6 {
-  .m-#{$i} { margin: l.$spacing-unit * $i !important; }
-  .p-#{$i} { padding: l.$spacing-unit * $i !important; }
+  .m-#{$i} { margin: l.$space-unit * $i !important; }
+  .p-#{$i} { padding: l.$space-unit * $i !important; }
 }

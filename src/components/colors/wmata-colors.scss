@@ -7,19 +7,19 @@
 .wmata-bg-capital-blue        { background: c.$capital-blue; }
 .wmata-bg-capital-dark-blue   { background: c.$capital-dark-blue; }
 .wmata-bg-national-mall-green { background: c.$national-mall-green; }
-.wmata-bg-union-plum          { background: c.$union-plum; }
+//.wmata-bg-union-plum          { background: c.$union-plum; }  //does not provide the color code ,will define it later
 .wmata-bg-capital-blue-tint   { background: c.$capital-blue-tint; }
 .wmata-bg-capital-blue-shade  { background: c.$capital-blue-shade; }
 .wmata-bg-capital-dark-blue-tint   { background: c.$capital-dark-blue-tint; }
 .wmata-bg-capital-dark-blue-shade  { background: c.$capital-dark-blue-shade; }
 .wmata-bg-capital-red-tint    { background: c.$capital-red-tint; }
 .wmata-bg-capital-red-shade   { background: c.$capital-red-shade; }
-.wmata-bg-monumental-bronze-tint   { background: c.$monumental-bronze-tint; }
-.wmata-bg-monumental-bronze-shade  { background: c.$monumental-bronze-shade; }
+//.wmata-bg-monumental-bronze-tint   { background: c.$monumental-bronze-tint; }
+//.wmata-bg-monumental-bronze-shade  { background: c.$monumental-bronze-shade; }
 .wmata-bg-national-mall-green-tint   { background: c.$national-mall-green-tint; }
 .wmata-bg-national-mall-green-shade  { background: c.$national-mall-green-shade; }
-.wmata-bg-union-plum-tint    { background: c.$union-plum-tint; }
-.wmata-bg-union-plum-shade   { background: c.$union-plum-shade; }
+//.wmata-bg-union-plum-tint    { background: c.$union-plum-tint; }
+//.wmata-bg-union-plum-shade   { background: c.$union-plum-shade; }
 .wmata-bg-dupont-glow-tint   { background: c.$dupont-glow-tint; }
 .wmata-bg-dupont-glow-shade  { background: c.$dupont-glow-shade; }
 .wmata-bg-cherry-blossom-pink-tint   { background: c.$cherry-blossom-pink-tint; }
@@ -38,7 +38,7 @@
 .wmata-text-capital-blue        { color: c.$capital-blue; }
 .wmata-text-capital-dark-blue   { color: c.$capital-dark-blue; }
 .wmata-text-national-mall-green { color: c.$national-mall-green; }
-.wmata-text-union-plum          { color: c.$union-plum; }
+//.wmata-text-union-plum          { color: c.$union-plum; }
 
 /* Borders */
 .wmata-border-capital-red       { border-color: c.$capital-red !important; }

@@ -2,6 +2,9 @@
 @use 'tokens/typography' as type;
 @use 'tokens/layout' as layout;
 
+/* Export tokens once (colors + spacing) */
+//@use 'tokens/_colors.export'; // <-- add this
+
 @use 'components/buttons/wmata-buttons.scss';
 @use 'components/cards/cards.scss';
 @use 'components/link/link.scss';
@@ -14,7 +17,9 @@
 @use 'components/navigation/navigation.scss';
 @use 'components/Forms v2/formv2.scss';
 
-@use 'components/forms';
+// ⚠️ Consider removing one of these if it duplicates CSS:
+// @use 'components/forms';
+
 @use 'components/iconography/iconography.scss';
 @use 'components/iconography/iconography-usage.scss';
 @use 'components/iconography/iconography-samples.scss';
@@ -22,26 +27,34 @@
 @use 'components/vertical-poster-grid.scss';
 @use 'components/Typo/typo.scss';
 
-
 @use 'utilities/text';
 @use 'utilities/backgrounds';
 @use 'utilities/spacing';
 
-
 @use "components/typography/hierarchy.scss";
 
 :root {
-  --wmata-primary: #{colors.$monumental-bronze};
-  --wmata-white: #{colors.$statuary-white};
-}
-html,body { height:100%; }
-body {
-  font-family: type.$font-text;
-  color: colors.$monumental-bronze;
-  background: colors.$statuary-white;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  /* spacing tokens */
+  --wmata-space-0: #{layout.$spacing-0};
+  --wmata-space-1: #{layout.$spacing-1};
+  --wmata-space-2: #{layout.$spacing-2};
+  --wmata-space-3: #{layout.$spacing-3};
+  --wmata-space-4: #{layout.$spacing-4};
+  --wmata-space-5: #{layout.$spacing-5};
+  --wmata-space-6: #{layout.$spacing-6};
+  --wmata-space-8: #{layout.$spacing-8};
+  --wmata-space-12: #{layout.$spacing-12};
+  --wmata-space-16: #{layout.$spacing-16};
 }
 
-//h1,h2,h3 { margin:0 0 8px 0; color: colors.$monumental-bronze; }
+html, body { height:100%; }
+
+body {
+  font-family: type.$font-text;
+  color: var(--wmata-text-primary);       /* <-- now use CSS var */
+  background: var(--wmata-bg-default);    /* <-- now use CSS var */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .body-text { font-size: type.$font-size-base; }

@@ -6,7 +6,7 @@
 .wmata-card {
   background: c.$statuary-white;
   border-radius: l.$border-radius;
-  padding: l.$spacing-lg; // More breathing room
+  padding: l.$space-lg; // More breathing room
   font-family: t.$font-text;
   border: 1px solid color.scale(c.$monumental-bronze, $lightness: 45%);
 
@@ -35,8 +35,8 @@
   justify-content: space-between;
   align-items: flex-start;
 
-  margin-bottom: l.$spacing-md;
-  gap: l.$spacing-md;
+  margin-bottom: l.$space-md;
+  gap: l.$space-md;
 
   h2, h3, h4 {
     margin: 0;
@@ -47,20 +47,20 @@
 
 /* Secondary text under title */
 .wmata-card-subheader {
-  margin-top: l.$spacing-xs;
+  margin-top: l.$space-xs;
   color: color.scale(c.$monumental-bronze, $lightness: 20%);
   font-weight: 600;
 }
 
 /* ---------- CARD BODY ---------- */
 .wmata-card-body {
-  font-size: t.$font-body;
+  font-size: t.$font-body-size;
   line-height: 1.6;
-  margin-bottom: l.$spacing-md;
+  margin-bottom: l.$space-md;
 
   .wmata-info-row {
     display: flex;
-    margin-bottom: l.$spacing-sm;
+    margin-bottom: l.$space-sm;
   }
 
   .wmata-info-label {
@@ -77,6 +77,6 @@
 /* ---------- CARD FOOTER ---------- */
 .wmata-card-footer {
   border-top: 1px solid c.$capital-cream;
-  padding-top: l.$spacing-sm;
-  margin-top: l.$spacing-sm;
+  padding-top: l.$space-sm;
+  margin-top: l.$space-sm;
 }

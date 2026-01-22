@@ -1,0 +1,52 @@
+// src/tokens/_colors.export.scss
+@use "./_colors.palette" as p;
+@use "./colors" as c;
+
+@mixin export-family($name, $map) {
+  @each $step, $hex in $map {
+    --wmata-#{$name}-#{$step}: #{$hex};
+  }
+}
+
+:root {
+  /* Full palettes */
+  @include export-family("cream", p.$cream);
+  @include export-family("bronze", p.$bronze);
+  @include export-family("blue", p.$blue);
+  @include export-family("darkblue", p.$darkblue);
+  @include export-family("red", p.$red);
+  @include export-family("pink", p.$pink);
+  @include export-family("orange", p.$orange);
+  @include export-family("mist", p.$mist);
+  @include export-family("green", p.$green);
+  @include export-family("moss", p.$moss);
+  @include export-family("grayscale", p.$grayscale);
+
+  /* Brand aliases */
+  --wmata-monumental-bronze: #{c.$monumental-bronze};
+  --wmata-statuary-white: #{c.$statuary-white};
+
+  --wmata-capital-cream: #{c.$capital-cream};
+  --wmata-capital-blue: #{c.$capital-blue};
+  --wmata-capital-dark-blue: #{c.$capital-dark-blue};
+  --wmata-capital-red: #{c.$capital-red};
+  --wmata-cherry-blossom-pink: #{c.$cherry-blossom-pink};
+  --wmata-dupont-glow: #{c.$dupont-glow};
+  --wmata-monument-mist: #{c.$monument-mist};
+  --wmata-national-mall-green: #{c.$national-mall-green};
+  --wmata-tidal-basin-moss: #{c.$tidal-basin-moss};
+
+  /* Semantic tokens (use these in components) */
+  --wmata-color-primary: var(--wmata-blue-500);
+  --wmata-color-primary-hover: var(--wmata-blue-700);
+
+  --wmata-color-danger: var(--wmata-red-500);
+  --wmata-color-danger-hover: var(--wmata-red-700);
+
+  --wmata-color-success: var(--wmata-green-500);
+  --wmata-color-success-hover: var(--wmata-green-700);
+
+  --wmata-text-primary: var(--wmata-bronze-700);
+  --wmata-bg-default: var(--wmata-grayscale-50);
+  --wmata-border-default: var(--wmata-grayscale-300);
+}

@@ -4,25 +4,25 @@
 @use 'sass:color';
 
 .wmata-form-group {
-  margin-bottom: l.$spacing-md;
+  margin-bottom: l.$space-md;
   display: flex;
   flex-direction: column;
-  gap: l.$spacing-xs;
+  gap: l.$space-xs;
 }
 
 .wmata-form-label {
   font-family: t.$font-text;
-  font-size: t.$font-caption;
+  font-size: t.$font-caption-size;
   font-weight: 600;
   color: c.$monumental-bronze;
 }
 
 .wmata-form-input {
-  padding: l.$spacing-sm;
+  padding: l.$space-sm;
   border-radius: l.$border-radius;
   border: 1px solid c.$capital-dark-blue;
   font-family: t.$font-text;
-  font-size: t.$font-body;
+  font-size: t.$font-body-size;
   background: c.$statuary-white;
   color: c.$monumental-bronze;
 
@@ -35,12 +35,12 @@
 
 .wmata-form-error {
   color: c.$capital-red;
-  font-size: t.$font-caption;
-  margin-top: l.$spacing-xs;
+  font-size: t.$font-caption-size;
+  margin-top: l.$space-xs;
 }
 
 .wmata-form-helper {
   color: c.$capital-blue-shade;
-  font-size: t.$font-caption;
-  margin-top: l.$spacing-xs;
+  font-size: t.$font-caption-size;
+  margin-top: l.$space-xs;
 }

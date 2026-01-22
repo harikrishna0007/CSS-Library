@@ -1,24 +1,49 @@
+/* =========================
+   Font Families
+   ========================= */
 $font-display: 'Helvetica Now Display', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
 $font-text: 'Helvetica Now Text', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
-//$font-family-micro: "Helvetica Now Micro", Helvetica, Arial, sans-serif;
 $font-micro: 'Helvetica Now Micro', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
 
+/* =========================
+   Font Weights (align to spec)
+   ========================= */
+$weight-regular: 200 !default;  /* spec says 200 */
+$weight-bold: 700 !default;
+$weight-extrabold: 800 !default; /* keep if you use it in hierarchy */
 
-// Font sizes
-$font-size-base: 16px !default;   // standard body text
-$font-size-sm: 14px !default;     // small UI
-$font-size-lg: 20px !default;     // headings
+/* =========================
+   Font Size Scale (from your spec)
+   ========================= */
+$font-size-xxs: 8px !default;
+$font-size-xs: 12px !default;
+$font-size-s: 14px !default;
+$font-size-base: 16px !default;
+$font-size-lg: 18px !default;
+$font-size-xl: 20px !default;
+$font-size-2xl: 22px !default;
+$font-size-3xl: 24px !default;
+$font-size-4xl: 28px !default;
+$font-size-5xl: 32px !default;
+$font-size-6xl: 40px !default;
+$font-size-7xl: 48px !default;
+$font-size-8xl: 96px !default;
+$font-size-9xl: 128px !default;
 
-// LINE HEIGHTS
+/* Keep your existing aliases (so old code doesn’t break) */
+$font-size-sm: $font-size-s !default;
+$font-size-lg-old: 20px !default; /* optional if anything used old $font-size-lg */
+$font-size-lg: $font-size-xl !default; /* if you want $font-size-lg to mean 20px still, remove this line */
+
+/* =========================
+   Line heights
+   ========================= */
 $line-height-base: 1.5 !default;
 $line-height-heading: 1.2 !default;
 
-// WMATA SPECIAL TOKENS
-$font-body: $font-size-base !default;   // <----- THIS WAS MISSING!
-$font-caption: $font-size-sm !default;
-$font-heading: $font-size-lg !default;
-
-// Font weights
-$weight-regular: 400;
-$weight-bold: 700;
-$weight-extrabold: 800;
+/* =========================
+   Safer “semantic” size aliases
+   ========================= */
+$font-body-size: $font-size-base !default;
+$font-caption-size: $font-size-s !default;
+$font-heading-size: $font-size-xl !default;

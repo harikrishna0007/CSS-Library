@@ -3,7 +3,12 @@
 @use 'tokens/layout' as layout;
 
 /* Export tokens once (colors + spacing) */
-//@use 'tokens/_colors.export'; // <-- add this
+//@use 'tokens/_colors.export'; 
+@use 'tokens/breakpoints';
+//@use 'tokens/layout';
+@use 'components/layout/grid';
+@use 'components/layout/columns';
+
 
 @use 'components/buttons/wmata-buttons.scss';
 @use 'components/cards/cards.scss';

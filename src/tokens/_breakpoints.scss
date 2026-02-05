@@ -1,0 +1,17 @@
+@use "sass:map";
+
+$wmata-breakpoints: (
+  sm: 375px,
+  md: 768px,
+  lg: 1512px
+);
+
+@function bp($key) {
+  @return map.get($wmata-breakpoints, $key);
+}
+
+@mixin up($key) {
+  @media (min-width: bp($key)) {
+    @content;
+  }
+}

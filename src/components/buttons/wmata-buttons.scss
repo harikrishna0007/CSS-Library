@@ -24,6 +24,22 @@ $wmata-blue-hover: color.adjust(c.$capital-blue, $lightness: -15%);
     background .15s ease,
     color .15s ease,
     font-weight .15s ease;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,0,0,0.18);
+  }
+
+  &:disabled,
+  &.is-disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+  }
 }
 
 /* ------------------------------------------------------
@@ -45,9 +61,9 @@ $wmata-blue-hover: color.adjust(c.$capital-blue, $lightness: -15%);
    SECONDARY
 ------------------------------------------------------- */
 .wmata-btn-secondary {
-  background: c.$capital-cream;
+ // background: c.$capital-cream;
   color: c.$monumental-bronze;
-  border: 1px solid color.adjust(c.$capital-cream, $lightness: -10%);
+  border: 1px solid color.adjust(c.$monumental-bronze, $lightness: -10%);
 
   &:hover {
     background: c.$monumental-bronze;
@@ -99,4 +115,114 @@ $wmata-blue-hover: color.adjust(c.$capital-blue, $lightness: -15%);
     color: c.$statuary-white;
     font-weight: 800;
   }
+}
+
+
+/* Sizes */
+.wmata-btn-lg { padding: 10px 16px; font-size: 14px; }
+.wmata-btn-sm { padding: 6px 10px; font-size: 12px; }
+
+/* Icon-only button (square) */
+.wmata-btn-icon {
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.wmata-btn-sm.wmata-btn-icon { width: 32px; height: 32px; }
+.wmata-btn-lg.wmata-btn-icon { width: 44px; height: 44px; }
+
+
+/* ------------------------------------------------------
+   INVERSE PRIMARY (for dark background)
+------------------------------------------------------- */
+.wmata-btn-inverse-primary {
+  background: c.$statuary-white;
+  color: c.$monumental-bronze;
+  border: 1px solid rgba(255,255,255,0.35);
+
+  &:hover {
+    background: c.$capital-cream;
+    color: c.$monumental-bronze;
+    font-weight: 800;
+  }
+}
+
+/* ------------------------------------------------------
+   INVERSE SECONDARY (outline on dark background)
+------------------------------------------------------- */
+.wmata-btn-inverse-secondary {
+  background: transparent;
+  color: c.$statuary-white;
+  border: 2px solid rgba(255,255,255,0.70);
+
+  &:hover {
+    background: rgba(255,255,255,0.12);
+    color: c.$statuary-white;
+    font-weight: 800;
+  }
+}
+
+/* =========================================================
+   Storybook layout helpers (for button pages)
+   ========================================================= */
+.wmata-sb-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 6px;
+}
+
+.wmata-sb-title {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.wmata-sb-desc {
+  font-size: 13px;
+  opacity: 0.75;
+  margin-bottom: 14px;
+}
+
+.wmata-sb-panel {
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.03);
+}
+
+.wmata-sb-panel--dark {
+  background: c.$monumental-bronze;
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.wmata-sb-section {
+  margin-top: 14px;
+}
+
+.wmata-sb-section-title {
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.wmata-sb-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.wmata-sb-label {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.wmata-sb-items {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
 }

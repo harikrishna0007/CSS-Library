@@ -1,0 +1,42 @@
+.wmata-section {
+  width: 100%;
+}
+
+.wmata-container {
+  width: 100%;
+  max-width: var(--wmata-container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--wmata-container-padding);
+  padding-right: var(--wmata-container-padding);
+}
+
+/* Bootstrap-like row (always 12 columns) */
+.wmata-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  /* remove gap */
+  gap: 0;
+
+  /* row gutters like Bootstrap */
+  margin-left: calc(var(--wmata-grid-gutter) / -2);
+  margin-right: calc(var(--wmata-grid-gutter) / -2);
+}
+
+
+
+/* Prevent overflow in grid children */
+.wmata-row > * {
+  padding-left: calc(var(--wmata-grid-gutter) / 2);
+  padding-right: calc(var(--wmata-grid-gutter) / 2);
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+
+/* Auto columns (Bootstrap-style .col) */
+.wmata-row > .col {
+  grid-column: auto;
+}
+

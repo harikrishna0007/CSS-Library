@@ -1,3 +1,9 @@
+@use './breakpoints' as b;
+
+
+/* =========================
+   Layout Tokens
+   ========================= */
 $border-radius: 6px !default;
 $space-unit: 8px !default;
 $shadow-base: 0 2px 5px rgba(0,0,0,0.08) !default;
@@ -50,3 +56,39 @@ $space-md: $spacing-4 !default;     // 16px
 $space-lg: $spacing-6 !default;     // 24px
 $space-xl: $spacing-8 !default;     // 32px
 $space-2xl: $spacing-12 !default;   // 48px
+
+
+
+:root {
+  /* Default (very small screens): fluid */
+  --wmata-container-max: 100%;
+  --wmata-container-padding: 16px;
+  --wmata-grid-gutter: 16px;
+}
+
+/* Mobile design width */
+@include b.up(sm) {
+  :root {
+    --wmata-container-max: 375px;
+    --wmata-container-padding: 16px;
+    --wmata-grid-gutter: 16px;
+  }
+}
+
+/* Tablet design width */
+@include b.up(md) {
+  :root {
+    --wmata-container-max: 768px;
+    --wmata-container-padding: 24px;
+    --wmata-grid-gutter: 20px;
+  }
+}
+
+/* Desktop design width */
+@include b.up(lg) {
+  :root {
+    --wmata-container-max: 1512px;
+    --wmata-container-padding: 32px;
+    --wmata-grid-gutter: 24px;
+  }
+}

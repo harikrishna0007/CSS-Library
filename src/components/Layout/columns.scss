@@ -1,0 +1,19 @@
+/* Auto columns (Bootstrap-style) */
+.wmata-row > .col {
+  flex: 1 0 0%;
+  min-width: 0;
+}
+
+/* Fixed columns (12-based) */
+.wmata-row > .col-1  { flex: 0 0 calc(100% * 1 / 12); max-width: calc(100% * 1 / 12); }
+.wmata-row > .col-2  { flex: 0 0 calc(100% * 2 / 12); max-width: calc(100% * 2 / 12); }
+.wmata-row > .col-3  { flex: 0 0 calc(100% * 3 / 12); max-width: calc(100% * 3 / 12); }
+.wmata-row > .col-4  { flex: 0 0 calc(100% * 4 / 12); max-width: calc(100% * 4 / 12); }
+.wmata-row > .col-5  { flex: 0 0 calc(100% * 5 / 12); max-width: calc(100% * 5 / 12); }
+.wmata-row > .col-6  { flex: 0 0 calc(100% * 6 / 12); max-width: calc(100% * 6 / 12); }
+.wmata-row > .col-7  { flex: 0 0 calc(100% * 7 / 12); max-width: calc(100% * 7 / 12); }
+.wmata-row > .col-8  { flex: 0 0 calc(100% * 8 / 12); max-width: calc(100% * 8 / 12); }
+.wmata-row > .col-9  { flex: 0 0 calc(100% * 9 / 12); max-width: calc(100% * 9 / 12); }
+.wmata-row > .col-10 { flex: 0 0 calc(100% * 10 / 12); max-width: calc(100% * 10 / 12); }
+.wmata-row > .col-11 { flex: 0 0 calc(100% * 11 / 12); max-width: calc(100% * 11 / 12); }
+.wmata-row > .col-12 { flex: 0 0 100%; max-width: 100%; }

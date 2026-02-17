@@ -8,6 +8,9 @@
 //@use 'tokens/layout';
 @use 'components/layout/grid';
 @use 'components/layout/columns';
+// src/wmata-theme.scss (or your main entry file)
+@use 'components/Typo/body';
+@use 'components/Typo/headline';
 
 
 @use 'components/buttons/wmata-buttons.scss';
@@ -25,9 +28,9 @@
 // ⚠️ Consider removing one of these if it duplicates CSS:
 // @use 'components/forms';
 
-@use 'components/iconography/iconography.scss';
-@use 'components/iconography/iconography-usage.scss';
-@use 'components/iconography/iconography-samples.scss';
+//@use 'components/iconography/iconography.scss';
+//@use 'components/iconography/iconography-usage.scss';
+//@use 'components/iconography/iconography-samples.scss';
 @use 'components/metro-squares.scss';
 @use 'components/vertical-poster-grid.scss';
 @use 'components/Typo/typo.scss';

@@ -5,15 +5,23 @@ $font-display: 'Helvetica Now Display', -apple-system, 'Segoe UI', Roboto, 'Helv
 $font-text: 'Helvetica Now Text', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
 $font-micro: 'Helvetica Now Micro', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !default;
 
-/* =========================
-   Font Weights (align to spec)
-   ========================= */
-$weight-regular: 200 !default;  /* spec says 200 */
-$weight-bold: 700 !default;
-$weight-extrabold: 800 !default; /* keep if you use it in hierarchy */
+/* Semantic family aliases (used by components) */
+$font-family-headline: $font-display !default;
+$font-family-body: $font-text !default;
 
 /* =========================
-   Font Size Scale (from your spec)
+   Font Weights (UX spec)
+   ========================= */
+$weight-regular: 200 !default;  /* UX says 200 */
+$weight-bold: 700 !default;
+$weight-extrabold: 800 !default; /* optional (only if approved/needed) */
+
+/* Semantic weight aliases (used by components) */
+$font-weight-regular: $weight-regular !default;
+$font-weight-bold: $weight-bold !default;
+
+/* =========================
+   Font Size Scale (UX spec)
    ========================= */
 $font-size-xxs: 8px !default;
 $font-size-xs: 12px !default;
@@ -30,20 +38,32 @@ $font-size-7xl: 48px !default;
 $font-size-8xl: 96px !default;
 $font-size-9xl: 128px !default;
 
-/* Keep your existing aliases (so old code doesn’t break) */
+/* =========================
+   Legacy aliases (only if you must keep old code working)
+   ========================= */
 $font-size-sm: $font-size-s !default;
-$font-size-lg-old: 20px !default; /* optional if anything used old $font-size-lg */
-$font-size-lg: $font-size-xl !default; /* if you want $font-size-lg to mean 20px still, remove this line */
+/* If something historically used "lg = 20px", keep a legacy name instead of overriding lg */
+$font-size-legacy-lg: $font-size-xl !default;
 
 /* =========================
-   Line heights
+   Optional general-purpose line-height tokens
+   (Avoid using these in the new type scale classes)
    ========================= */
-$line-height-base: 1.5 !default;
-$line-height-heading: 1.2 !default;
+$line-height-readable: 1.4 !default;
+$line-height-tight: 1.2 !default;
 
+/* Semantic aliases (safe + explicit) */
+$font-body-size: $font-size-base !default; // 16px
+$font-body-line-height: 1.25 !default;     // 20px / 16px
 /* =========================
-   Safer “semantic” size aliases
+   Semantic aliases (compat layer)
+   Keep old components working while we migrate to the new scale classes.
    ========================= */
-$font-body-size: $font-size-base !default;
-$font-caption-size: $font-size-s !default;
-$font-heading-size: $font-size-xl !default;
+$font-body-size: $font-size-base !default;      // 16px
+$font-caption-size: $font-size-s !default;      // 14px
+$font-heading-size: $font-size-xl !default;     // 20px (generic heading if needed)
+
+/* Optional: helpful line-height aliases that match UX body spec */
+$line-height-body: 1.25 !default;               // 20/16 for Body/M
+$line-height-caption: 1.2142857 !default;       // 17/14 for Body/S
+$line-height-micro: 1.25 !default;              // 15/12 for Body/XS

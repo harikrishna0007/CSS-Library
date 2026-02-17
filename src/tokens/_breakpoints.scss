@@ -3,7 +3,8 @@
 $wmata-breakpoints: (
   sm: 375px,
   md: 768px,
-  lg: 1512px
+  lg: 1512px,
+desktop: 1024px
 );
 
 @function bp($key) {

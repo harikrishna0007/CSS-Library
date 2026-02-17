@@ -83,8 +83,16 @@ $space-2xl: $spacing-12 !default;   // 48px
     --wmata-grid-gutter: 20px;
   }
 }
-
 /* Desktop design width */
+@media (min-width: 1440px){
+  :root{
+    --wmata-container-max: 1440px;
+    --wmata-container-padding: 32px;
+    --wmata-grid-gutter: 24px;
+  }
+}
+
+/* macbook 14" */
 @include b.up(lg) {
   :root {
     --wmata-container-max: 1512px;

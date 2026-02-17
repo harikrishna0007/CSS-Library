@@ -1,45 +1,23 @@
-@use '../../tokens/typography' as t;
+/* src/tokens/_typography.scss */
 
+$font-family-headline: "Helvetica Neue", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+$font-family-body: "Helvetica Neue", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
-.wmata-h1 {
-  font-family:"Helvetica Now Text", -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  font-weight: 800;
-  font-size: 64px !important;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
-  margin: 0 0 16px 0;
-}
+$font-weight-regular: 200;
+$font-weight-bold: 700;
 
-.wmata-subhead {
-  font-family: t.$font-text;
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 1.15;
-  margin: 0 0 12px 0;
-}
-
-.wmata-body {
-  font-family: t.$font-text;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  margin: 0 0 14px 0;
-  max-width: 720px;
-}
-
-.wmata-tagline {
-  font-family: t.$font-text;
-  font-weight: 800;
-  font-size: 14px;
-  line-height: 1.2;
-  margin: 0 0 10px 0;
-}
-
-.wmata-micro {
-  font-family: t.$font-micro;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.3;
-  margin: 0;
-}
+// Size scale (pt treated as px for web)
+$font-size-xxs: 8px;
+$font-size-xs: 12px;
+$font-size-s: 14px;
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 22px;
+$font-size-3xl: 24px;
+$font-size-4xl: 28px;
+$font-size-5xl: 32px;
+$font-size-6xl: 40px;
+$font-size-7xl: 48px;
+$font-size-8xl: 96px;
+$font-size-9xl: 128px;

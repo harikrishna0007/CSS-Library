@@ -1,30 +1,89 @@
 import React from 'react';
 import './badges.scss';
-//import '../cards/cards.scss'; // <-- if your card styles live elsewhere, update path
 import '../cards/cards.scss';
+
 export default {
   title: 'Components/Badge',
 };
 
 /* -----------------------------
-   Minimal Badge Component
+   ServiceNow Status Badge
+   - uses: .wmata-badge + .wmata-badge--status + variant
 ------------------------------ */
-function Badge({ label, variant }) {
+function StatusBadge({ label, variant }) {
   return (
-    <span className={`wmata-badge wmata-badge-${variant}`}>
+    <span className={`wmata-badge wmata-badge--status wmata-badge--${variant}`}>
       {label}
     </span>
   );
 }
 
 /* -----------------------------
-   Basic Badge Stories
+   Internal App Badge (default)
+   - uses: .wmata-badge
+   - optional icon: .wmata-badge__icon
 ------------------------------ */
-export const Neutral = () => <Badge label="Pending" variant="neutral" />;
-export const Success = () => <Badge label="Approved" variant="success" />;
-export const Error = () => <Badge label="Rejected" variant="error" />;
-export const Warning = () => <Badge label="Attention" variant="warning" />;
-export const Info = () => <Badge label="Info" variant="info" />;
+function InternalBadge({ label, withIcon = false }) {
+  return (
+    <span className="wmata-badge">
+      {withIcon && (
+        <span className="wmata-badge__icon" aria-hidden="true">
+          {/* placeholder icon (replace later with your icon system) */}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M7 7h10v10H7V7Z"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M9 3h6"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+          </svg>
+        </span>
+      )}
+      {label}
+    </span>
+  );
+}
+
+/* -----------------------------
+   Status Badge Stories (ServiceNow)
+------------------------------ */
+export const Neutral = () => <StatusBadge label="Pending" variant="neutral" />;
+export const Success = () => <StatusBadge label="Approved" variant="success" />;
+export const Error = () => <StatusBadge label="Rejected" variant="error" />;
+export const Warning = () => <StatusBadge label="Attention" variant="warning" />;
+export const Info = () => <StatusBadge label="Info" variant="info" />;
+
+/* -----------------------------
+   Internal Badge Stories
+------------------------------ */
+export const InternalWithoutIcon = () => (
+  <InternalBadge label="Lorem Ipsum" withIcon={false} />
+);
+
+export const InternalWithIcon = () => (
+  <InternalBadge label="Lorem Ipsum" withIcon />
+);
+
+/* Optional: a single demo story showing both like your design image */
+export const InternalShowcase = () => (
+  <div style={{ display: 'grid', gap: '12px', padding: '16px' }}>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <div style={{ width: '120px', fontWeight: 600 }}>With Icon</div>
+      <InternalBadge label="Lorem Ipsum" withIcon />
+    </div>
+
+    <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <div style={{ width: '120px', fontWeight: 600 }}>Without Icon</div>
+      <InternalBadge label="Lorem Ipsum" withIcon={false} />
+    </div>
+  </div>
+);
 
 /* -----------------------------
    Badge Inside a Card Example
@@ -40,7 +99,8 @@ export const InsideCard = () => (
           </p>
         </div>
 
-        <span className="wmata-badge wmata-badge-success">
+        {/* Use status badge inside card */}
+        <span className="wmata-badge wmata-badge--status wmata-badge--success">
           Approved
         </span>
       </div>

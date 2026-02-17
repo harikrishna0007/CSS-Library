@@ -2,7 +2,7 @@
 import React from "react";
 
 export default {
-  title: "Components/Colors",
+  title: "Foundations/Colors/overview",
 };
 
 const colors = [

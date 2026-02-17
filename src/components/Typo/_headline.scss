@@ -1,0 +1,51 @@
+@use "sass:map";
+@use "sass:math";
+@use '../../tokens/typography' as t;
+@use '../../tokens/breakpoints' as bp; // <-- match your file name (breakpoint.scss)
+
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+$headline-mobile: (
+  xl: (size: 32, line: 30),
+  l:  (size: 28, line: 27),
+  m:  (size: 24, line: 24),
+  s:  (size: 22, line: 22),
+  xs: (size: 20, line: 20)
+);
+
+$headline-desktop: (
+  xl: (size: 48, line: 44),
+  l:  (size: 40, line: 36),
+  m:  (size: 32, line: 30),
+  s:  (size: 24, line: 24),
+  xs: (size: 20, line: 20)
+);
+
+.wmata-headline {
+  font-family: t.$font-display;      // or t.$font-family-headline if you added alias
+  font-weight: t.$weight-bold;       // 700
+  letter-spacing: -0.02em;           // -2%
+  margin: 0;
+}
+
+@mixin headline-size($key) {
+  $m: map.get($headline-mobile, $key);
+  $d: map.get($headline-desktop, $key);
+
+  font-size: rem(map.get($m, size));
+  line-height: rem(map.get($m, line));
+
+  // Use your breakpoint mixin (no undefined variables)
+  @include bp.up(desktop) {
+    font-size: rem(map.get($d, size));
+    line-height: rem(map.get($d, line));
+  }
+}
+
+.wmata-headline--xl { @include headline-size(xl); }
+.wmata-headline--l  { @include headline-size(l); }
+.wmata-headline--m  { @include headline-size(m); }
+.wmata-headline--s  { @include headline-size(s); }
+.wmata-headline--xs { @include headline-size(xs); }

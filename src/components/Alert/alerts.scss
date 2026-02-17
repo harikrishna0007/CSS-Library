@@ -1,77 +1,105 @@
+@use "../../tokens/colors.palette" as cp;
+
 /* ============================
-   WMATA Alerts
+   WMATA ALERT (Default = Banner Style)
    ============================ */
 
 .wmata-alert {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  box-sizing: border-box;
 
-  max-width: 700px;
-  margin: 8px 0;
-  padding: 10px 12px;
+  width: 100%;
+  margin: 0;
+  padding: 18px 20px;
 
-  border-radius: 8px;
-  border-width: 1px;
-  border-style: solid;
+  border-radius: 0;
+  border: 1px solid;
 
-  font-size: 13px;
-  line-height: 1.4;
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* icon | content | close */
+  gap: 12px;
+  align-items: start;
+
+  font-size: 14px;
+  line-height: 1.5;
   font-family: "Helvetica Now Text", -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* ✅ Default = Warning Banner look */
+  background-color: cp.palette(cp.$orange, 400);
+  border-color: cp.palette(cp.$orange, 700);
+  color: cp.palette(cp.$grayscale, 900);
 }
 
-/* Optional icon slot */
+/* Icon */
 .wmata-alert-icon {
-  flex: 0 0 auto;
-  margin-top: 2px;
+  grid-column: 1;
 }
 
-/* Content block */
+/* Content */
 .wmata-alert-content {
-  flex: 1 1 auto;
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Optional title */
 .wmata-alert-title {
-  font-weight: 600;
-  margin-bottom: 2px;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
 
-/* Optional close button */
+.wmata-alert-message {
+  margin: 0;
+}
+
+/* Close button */
 .wmata-alert-close {
-  flex: 0 0 auto;
-  margin-left: 8px;
+  grid-column: 3;
+  justify-self: end;
+  align-self: start;
+
   cursor: pointer;
   border: none;
   background: transparent;
-  font-size: 14px;
-  line-height: 1;
-  padding: 0 2px;
+  font-size: 16px;
   color: inherit;
 }
 
-/* ----- Variants ----- */
+/* Link */
+.wmata-alert-link {
+  margin-top: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+.wmata-alert-link:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   Variant Overrides (Optional)
+   ============================ */
 
 .wmata-alert-success {
-  background: #ecfdf3;
-  border-color: #bbf7d0;
-  color: #166534;
+  background-color: cp.palette(cp.$green, 300);
+  border-color: cp.palette(cp.$green, 700);
 }
 
 .wmata-alert-error {
-  background: #fef2f2;
-  border-color: #fecaca;
-  color: #b91c1c;
-}
-
-.wmata-alert-warning {
-  background: #fffbeb;
-  border-color: #fef3c7;
-  color: #92400e;
+  background-color: cp.palette(cp.$red, 300);
+  border-color: cp.palette(cp.$red, 700);
 }
 
 .wmata-alert-info {
-  background: #eff6ff;
-  border-color: hsl(217, 100%, 85%);
-  color: #1d4ed8;
+  background-color: cp.palette(cp.$mist, 300);
+  border-color: cp.palette(cp.$mist, 700);
+}
+
+/* ============================
+   Responsive
+   ============================ */
+
+@media (max-width: 767px) {
+  .wmata-alert {
+    padding: 16px;
+  }
 }

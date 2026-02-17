@@ -1,0 +1,35 @@
+@use '../../tokens/typography' as t;
+@use "sass:map";
+@use "sass:math";
+
+@function rem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+
+$wmata-body: (
+  l:  (size: 18, line: 21),
+  m:  (size: 16, line: 20),
+  s:  (size: 14, line: 17),
+  xs: (size: 12, line: 15)
+);
+
+.wmata-body {
+  font-family: t.$font-family-body;
+  letter-spacing: -0.02em; // -2%
+  margin: 0;
+}
+
+.wmata-body--regular { font-weight: t.$font-weight-regular; } // 200 (UX)
+.wmata-body--bold    { font-weight: t.$font-weight-bold; }    // 700 (UX)
+
+@mixin body-size($key) {
+  $v: map.get($wmata-body, $key);
+  font-size: rem(map.get($v, size));
+  line-height: rem(map.get($v, line));
+}
+
+.wmata-body--l  { @include body-size(l); }
+.wmata-body--m  { @include body-size(m); }
+.wmata-body--s  { @include body-size(s); }
+.wmata-body--xs { @include body-size(xs); }

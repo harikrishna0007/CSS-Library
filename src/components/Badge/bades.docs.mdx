@@ -6,7 +6,7 @@ import { Meta } from '@storybook/blocks';
 title: "Badges/Docs"
 ---
 
-# WMATA Badges  
+# WMATA Badges
 Small status labels for tables, lists, and detail views.
 
 Badges follow WMATA’s color rules and typography tokens and are ideal for showing
@@ -24,6 +24,8 @@ approval status, request state, or severity.
 | `.wmata-badge-error` | Error / rejected / failed |
 | `.wmata-badge-warning` | Warning / attention needed |
 | `.wmata-badge-info` | Informational status |
+| `.wmata-badge-chip` | **Internal app badge** (larger pill “chip”, optional icon) |
+| `.wmata-badge-chip__icon` | Icon container inside the internal badge chip |
 
 ---
 
@@ -42,41 +44,16 @@ Use badges inside tables, cards, or detail panels.
 
 
 
-
 ---
 
-## Using Badges Inside a Card
+## Internal Application Usage (Default Badge)
 
-Badges work especially well inside `.wmata-card` components to show the status
-of a record (purchase request, approval, task, etc.).
+The base `.wmata-badge` class is designed for internal application usage.
+It supports optional icons and uses the standard WMATA color palette.
 
-### Example – Card Header with Status Badge
+### Without Icon
 
 ```html
-<div class="wmata-card">
-  <div class="wmata-card-header">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-      <div>
-        <h2 class="wmata-page-title">Purchase Request #RITM0012345</h2>
-        <p class="wmata-body-text">
-          Laptop and accessories for new hire.
-        </p>
-      </div>
-
-      <span class="wmata-badge wmata-badge-success">
-        Approved
-      </span>
-    </div>
-  </div>
-
-  <div class="wmata-card-body">
-    <div class="wmata-info-row">
-      <div class="wmata-info-label">Requested By</div>
-      <div class="wmata-info-value">Jane Doe</div>
-    </div>
-    <div class="wmata-info-row">
-      <div class="wmata-info-label">Total Cost</div>
-      <div class="wmata-info-value">$1,250.00</div>
-    </div>
-  </div>
-</div>
+<span class="wmata-badge">
+  Lorem Ipsum
+</span>

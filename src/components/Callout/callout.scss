@@ -1,0 +1,156 @@
+@use 'sass:map';
+@use '../../tokens/colors.palette' as palette;
+@use '../../tokens/typography' as t;
+@use '../../tokens/layout' as l;
+@use '../../tokens/breakpoints' as bp;
+
+.wmata-callout {
+  background: map.get(palette.$bronze, 700);
+  color: #fff;
+
+  border-radius: 8px;
+  padding: 20px;
+
+  /* RESPONSIVE CORE */
+  width: 100%;
+  max-width: 100%;     /* key: never exceed parent */
+  min-width: 0;        /* key: allow shrink in flex/grid parents */
+  box-sizing: border-box;
+
+  /* optional “nice limit” only on larger screens */
+  @include bp.up(md) {
+    max-width: 720px;
+  }
+
+  &__form {
+    display: grid;
+    gap: 10px;
+
+    /* RESPONSIVE */
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;   /* don’t cap form on mobile */
+  }
+
+  /* keep your desktop readability constraint ONLY on bigger screens */
+  @include bp.up(md) {
+    &__form {
+      max-width: 560px;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    min-width: 0;          /* key */
+    max-width: 100%;
+    height: 40px;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    background: #fff;
+    color: #111;
+    font-family: t.$font-text;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  &__actions {
+    margin-top: 6px;
+    display: flex;
+    flex-wrap: wrap;       /* key: prevents overflow */
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /* MOBILE TIGHTENING */
+  @media (max-width: 374px) {
+    padding: 16px;
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__input {
+      height: 38px;
+    }
+  }
+
+  /* your existing error/success rules can remain the same */
+}
+/* -------- Completed state -------- */
+.wmata-callout.wmata-callout--success {
+  background: map.get(palette.$blue, 600);
+  color: #fff;
+
+  .wmata-callout__title {
+    margin-bottom: 14px;
+  }
+
+  .wmata-callout__success {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .wmata-callout__success-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    background: #fff;
+    position: relative;
+    margin-top: 6px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 10px;
+      border-right: 2px solid map.get(palette.$blue, 600);
+      border-bottom: 2px solid map.get(palette.$blue, 600);
+      transform: rotate(45deg);
+      top: 4px;
+      left: 7px;
+    }
+  }
+
+  /* Big headline like Figma */
+  .wmata-callout__success-title {
+    font-family: t.$font-display;
+    font-weight: 800;
+    font-size: 26px;
+    line-height: 1.05;
+    margin: 0 0 8px;
+  }
+
+  .wmata-callout__success-body {
+    font-family: t.$font-text;
+    font-size: 13px;
+    line-height: 1.35;
+    margin: 0;
+    opacity: 0.95;
+    max-width: 560px;
+  }
+}
+
+/* Responsive tuning */
+@media (max-width: 374px) {
+  .wmata-callout.wmata-callout--success {
+    padding: 16px;
+
+    .wmata-callout__success-title {
+      font-size: 22px;
+    }
+  }
+}
+
+@include bp.up(md) {
+  .wmata-callout.wmata-callout--success {
+    padding: 22px;
+
+    .wmata-callout__success-title {
+      font-size: 28px;
+    }
+  }
+}

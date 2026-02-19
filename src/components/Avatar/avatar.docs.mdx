@@ -1,0 +1,77 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Components/Avatar/DetailedDocs" />
+
+---
+Title: "Avatar/Docs"
+---
+
+
+# Avatar
+
+The **Avatar** component represents a user or account within the WMATA Design System.  
+It displays user initials inside a circular container and supports multiple sizes and visual variants.
+
+Avatars are typically used in:
+
+- Tables (Assigned To / Requestor columns)
+- Navigation headers
+- Cards
+- User profile triggers
+- Internal tools (ServiceNow widgets, dashboards, etc.)
+
+---
+
+## Anatomy
+
+An Avatar consists of:
+
+1. **Container** – Circular wrapper (`.wmata-avatar`)
+2. **Content**
+   - Initials text (`.wmata-avatar__text`)
+   - Optional image (`.wmata-avatar__img`)
+3. **Modifiers**
+   - Size modifiers
+   - Variant modifiers
+   - Optional ring
+
+---
+
+## Sizes
+
+The Avatar component supports three sizes:
+
+| Size   | Class                      | Diameter | Font Size |
+|--------|----------------------------|----------|-----------|
+| Small  | `wmata-avatar--sm`         | 22px     | 10px      |
+| Medium | `wmata-avatar--md` (default) | 28px     | 12px      |
+| Large  | `wmata-avatar--lg`         | 36px     | 14px      |
+
+### Preview
+
+<Canvas>
+  <Story of={AvatarStories.Sizes} />
+</Canvas>
+
+---
+
+## Playground
+
+Use controls below to experiment with size, variant, and ring options.
+
+<Canvas>
+  <Story of={AvatarStories.Playground} />
+</Canvas>
+
+<ArgsTable of={AvatarStories.Playground} />
+
+---
+
+## Usage
+
+### Default Avatar (Medium)
+
+```html
+<span class="wmata-avatar wmata-avatar--md" aria-label="User initials DW">
+  <span class="wmata-avatar__text">DW</span>
+</span>

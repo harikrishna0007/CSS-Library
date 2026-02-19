@@ -1,0 +1,50 @@
+import { Meta } from '@storybook/blocks';
+import * as CalloutStories from './Callout.stories';
+
+<Meta title="Components/Callout/DetailedDocs" />
+
+# Callout
+
+The **Callout** component is a focused action panel used to collect simple input (such as email subscription).
+
+It is controlled by a **single base class** and optional **state modifier classes**.
+
+---
+
+## States Overview
+
+| State      | Class Applied |
+|------------|--------------|
+| Default    | `.wmata-callout` |
+| Error      | `.wmata-callout wmata-callout--error` |
+| Completed  | `.wmata-callout wmata-callout--success` |
+
+---
+
+# Default State
+
+
+### Markup
+
+```html
+<div class="wmata-callout">
+  <h3 class="wmata-callout__title">Keep Up with Metro</h3>
+
+  <div class="wmata-callout__form">
+    <label class="wmata-callout__label" for="email-default">
+      Email Address
+    </label>
+
+    <input
+      id="email-default"
+      type="email"
+      class="wmata-callout__input"
+    />
+
+    <div class="wmata-callout__actions">
+      <button class="wmata-btn wmata-btn-primary">
+        Subscribe
+      </button>
+    </div>
+  </div>
+</div>

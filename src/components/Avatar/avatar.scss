@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use '../../tokens/colors.palette' as palette;
+@use '../../tokens/colors' as colors;
+@use '../../tokens/typography' as t;
+
+/* ---------------------------------------
+   Avatar
+---------------------------------------- */
+
+.wmata-avatar {
+  --wmata-avatar-size: 28px;
+  --wmata-avatar-font-size: 12px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--wmata-avatar-size);
+  height: var(--wmata-avatar-size);
+
+  border-radius: 9999px;
+  user-select: none;
+
+  font-family: t.$font-text;
+  font-weight: 700;
+  font-size: var(--wmata-avatar-font-size);
+
+  /* ✅ FIXED — using map.get */
+  background: map.get(palette.$blue, 600);
+  color: colors.$capital-cream;
+}
+
+/* Sizes */
+.wmata-avatar--sm {
+  --wmata-avatar-size: 22px;
+  --wmata-avatar-font-size: 10px;
+}
+
+.wmata-avatar--md {
+  --wmata-avatar-size: 28px;
+  --wmata-avatar-font-size: 12px;
+}
+
+.wmata-avatar--lg {
+  --wmata-avatar-size: 36px;
+  --wmata-avatar-font-size: 14px;
+}

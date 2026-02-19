@@ -1,182 +1,260 @@
-@use '../../tokens/colors' as c;
-@use '../../tokens/layout' as l;
-@use '../../tokens/typography' as t;
+@use "../../tokens/colors.palette" as p;
+/* If you have your breakpoint mixin file, use it (recommended) */
+@use "../../tokens/breakpoints" as bp;
 
-/* ===== Base wrapper ===== */
+/* -------------------------------------------------------
+  WMATA TABLE — Design System Building Blocks
+  Base:        .wmata-table
+  Wrapper:     .wmata-table-wrap
+
+  Modifiers:
+    .wmata-table--striped
+    .wmata-table--hover
+    .wmata-table--compact
+    .wmata-table--sticky
+    .wmata-table--stack   (responsive stacking on mobile)
+
+  Elements:
+    .wmata-table__header
+    .wmata-table__header--sm | --lg
+    .wmata-table__header-icon
+
+    .wmata-table__cell
+    .wmata-table__cell--double
+    .wmata-table__cell-primary
+    .wmata-table__cell-secondary
+
+  Notes:
+   - Colors come from tokens/_colors.palette.scss only
+   - Stacking uses td[data-label="Header Name"] for mobile labels
+-------------------------------------------------------- */
+
+/* ---------- Wrapper ---------- */
 .wmata-table-wrap {
   width: 100%;
   overflow-x: auto;
-  border: 1px solid rgba(0,0,0,0.10);
-  border-radius: l.$border-radius;
-  background: c.$statuary-white;
+  -webkit-overflow-scrolling: touch;
 }
 
-/* ===== Base table ===== */
+/* ---------- Base Table ---------- */
 .wmata-table {
+  /* Theming hooks (still token-driven) */
+  --wmata-table-bg: #{p.palette(p.$cream, 100)};
+  --wmata-table-header-bg: #{p.palette(p.$cream, 600)};
+  --wmata-table-row-alt: #{p.palette(p.$cream, 200)};
+  --wmata-table-text: #{p.palette(p.$bronze, 950)};
+  --wmata-table-border: #{p.palette(p.$bronze, 100)};
+  --wmata-table-muted: #{p.palette(p.$bronze, 400)};
+
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-family: t.$font-text;
-  font-size: t.$font-size-base;
-  color: c.$monumental-bronze;
+  background: var(--wmata-table-bg);
+  color: var(--wmata-table-text);
+
+  border: 1px solid var(--wmata-table-border);
+  border-radius: 6px;
+  overflow: hidden;
+
+  font-size: 14px;
+  line-height: 1.35;
 }
 
-/* Header */
-.wmata-table thead th {
+/* Caption (optional) */
+.wmata-table caption {
   text-align: left;
-  font-weight: t.$weight-bold;
-  font-size: t.$font-size-sm;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-
-  background: c.$capital-cream;
-  padding: l.$space-sm l.$space-md;
-  border-bottom: 1px solid rgba(0,0,0,0.14);
-  white-space: nowrap;
+  padding: 10px 12px;
+  font-weight: 700;
 }
 
-/* Cells */
-.wmata-table tbody td {
-  padding: l.$space-sm l.$space-md;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+/* ---------- Header Building Block ---------- */
+/* Apply these classes on <th> */
+.wmata-table thead th,
+.wmata-table__header {
+  background: var(--wmata-table-header-bg);
+  font-weight: 700;
+  text-align: left;
+  padding: 10px 12px;
+
+  border-bottom: 1px solid var(--wmata-table-border);
+  border-right: 1px solid var(--wmata-table-border);
   vertical-align: middle;
-  background: transparent;
 }
 
-/* Zebra */
-.wmata-table--zebra tbody tr:nth-child(even) td {
-  background: rgba(0,0,0,0.02);
+/* remove last column divider */
+.wmata-table thead th:last-child,
+.wmata-table__header:last-child {
+  border-right: 0;
 }
 
-/* Compact */
-.wmata-table--compact thead th,
-.wmata-table--compact tbody td {
-  padding: l.$space-xs l.$space-sm;
-  font-size: t.$font-size-sm;
+/* Header sizes (UX “Small / Large”) */
+.wmata-table__header--sm {
+  padding: 8px 10px;
+  font-size: 13px;
 }
 
-/* Bordered */
-.wmata-table--bordered thead th,
-.wmata-table--bordered tbody td {
-  border-bottom: 1px solid rgba(0,0,0,0.14);
-}
-.wmata-table--bordered thead th + th,
-.wmata-table--bordered tbody td + td {
-  border-left: 1px solid rgba(0,0,0,0.10);
+.wmata-table__header--lg {
+  padding: 12px 14px;
+  font-size: 15px;
 }
 
-/* Numeric / right aligned */
-.wmata-td--num { text-align: right; font-variant-numeric: tabular-nums; }
-
-/* ===== Hover table (strong hover + focus) ===== */
-.wmata-table--hover tbody tr {
-  transition: background 120ms ease;
-}
-.wmata-table--hover tbody tr:hover td {
-  background: rgba(0,0,0,0.035);
-}
-.wmata-table--hover tbody tr:focus-within td {
-  background: rgba(0,0,0,0.05);
-}
-
-/* Selectable row (add .is-selected on <tr>) */
-.wmata-table tbody tr.is-selected td {
-  background: rgba(0,0,0,0.06);
-  border-bottom-color: rgba(0,0,0,0.18);
-}
-
-/* ===== Sortable header ===== */
-.wmata-th-sort {
-  cursor: pointer;
-  user-select: none;
-}
-.wmata-th-sort .wmata-sort {
+/* Header with icon (UX “With icon”) */
+.wmata-table__header-icon {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-}
-.wmata-sort-icon {
-  font-size: 12px;
-  opacity: 0.6;
-}
-.wmata-th-sort.is-sorted .wmata-sort-icon {
-  opacity: 1;
-}
-
-/* ===== Status pill (optional helper) ===== */
-.wmata-table-status {
-  display: inline-flex;
-  align-items: center;
-  padding: 2px 10px;
-  border-radius: 999px;
-  font-size: t.$font-size-sm;
-  font-weight: t.$weight-bold;
-  background: rgba(0,0,0,0.06);
-}
-.wmata-table-status--success { background: rgba(0,128,0,0.12); }
-.wmata-table-status--warning { background: rgba(255,165,0,0.16); }
-.wmata-table-status--error   { background: rgba(220,20,60,0.14); }
-
-/* ===== Actions / dropdown column ===== */
-.wmata-td--actions {
-  width: 1%;
+  gap: 8px;
   white-space: nowrap;
-  text-align: right;
 }
 
-/* Dropdown button (works with your button styles too) */
-.wmata-table-action-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.12);
-  background: c.$statuary-white;
-  cursor: pointer;
-}
-
-.wmata-table-action-btn:hover {
-  background: rgba(0,0,0,0.03);
-}
-
-/* Simple dropdown menu */
-.wmata-dropdown {
-  position: relative;
+/* optional icon slot (use your icon system later) */
+.wmata-table__header-icon > .wmata-table__icon {
+  width: 16px;
+  height: 16px;
   display: inline-block;
+  flex: 0 0 16px;
 }
 
-.wmata-dropdown-menu {
-  position: absolute;
-  right: 0;
-  top: calc(100% + 8px);
-  min-width: 180px;
-  background: c.$statuary-white;
-  border: 1px solid rgba(0,0,0,0.12);
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-  padding: 6px;
-  z-index: 50;
+/* ---------- Cell Building Block ---------- */
+/* Apply these classes on <td> if you want consistent styling */
+.wmata-table tbody td,
+.wmata-table__cell {
+  padding: 10px 12px;
+  vertical-align: top;
+
+  border-bottom: 1px solid var(--wmata-table-border);
+  border-right: 1px solid var(--wmata-table-border);
 }
 
-.wmata-dropdown-item {
+/* remove last column divider */
+.wmata-table tbody td:last-child,
+.wmata-table__cell:last-child {
+  border-right: 0;
+}
+
+/* remove last row divider */
+.wmata-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* UX “Odd / Even” (zebra) */
+.wmata-table.wmata-table--striped tbody tr:nth-child(even) td {
+  background: var(--wmata-table-row-alt);
+}
+
+/* Optional hover (token-based overlay, not hard-coded hex) */
+.wmata-table.wmata-table--hover tbody tr:hover td {
+  background: rgba(p.palette(p.$grayscale, 950), 0.02);
+}
+
+/* Compact density */
+.wmata-table.wmata-table--compact thead th,
+.wmata-table.wmata-table--compact tbody td {
+  padding: 8px 10px;
+}
+
+/* Sticky header */
+.wmata-table.wmata-table--sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* ---------- Double Text Cell (UX “Double Text”) ---------- */
+.wmata-table__cell--double {
   display: flex;
-  width: 100%;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 10px;
-  border-radius: 10px;
-  font-size: t.$font-size-sm;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  text-align: left;
-  color: c.$monumental-bronze;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
 }
-.wmata-dropdown-item:hover {
-  background: rgba(0,0,0,0.04);
+
+.wmata-table__cell-primary {
+  font-weight: 400;
 }
-.wmata-dropdown-item.is-danger:hover {
-  background: rgba(220,20,60,0.10);
+
+.wmata-table__cell-secondary {
+  font-weight: 700; /* emphasized */
+}
+
+/* =======================================================
+   Responsive Stacking on Mobile (UX requirement)
+   Modifier: .wmata-table--stack
+
+   Usage:
+     <td data-label="Header">Value</td>
+
+   On mobile:
+     - hide thead
+     - each row becomes a "card"
+     - each cell shows label + value
+======================================================= */
+.wmata-table.wmata-table--stack {
+  /* keep table look on desktop; stacking kicks in under md */
+}
+
+/* Use your breakpoints mixin (md = 768 in your map) */
+@include bp.up(md) {
+  .wmata-table.wmata-table--stack {
+    /* desktop/tablet: normal table layout */
+  }
+}
+
+/* Mobile: below md */
+@media (max-width: #{bp.bp(md) - 1px}) {
+  .wmata-table.wmata-table--stack {
+    border-radius: 10px; /* looks nicer in stacked mode */
+  }
+
+  .wmata-table.wmata-table--stack thead {
+    display: none;
+  }
+
+  .wmata-table.wmata-table--stack,
+  .wmata-table.wmata-table--stack tbody,
+  .wmata-table.wmata-table--stack tr,
+  .wmata-table.wmata-table--stack td {
+    display: block;
+    width: 100%;
+  }
+
+  .wmata-table.wmata-table--stack tbody tr {
+    background: var(--wmata-table-bg);
+    border-bottom: 1px solid var(--wmata-table-border);
+    padding: 8px 10px;
+  }
+
+  .wmata-table.wmata-table--stack tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  /* Each cell becomes a row: label left, value right */
+  .wmata-table.wmata-table--stack tbody td {
+    border-right: 0;
+    border-bottom: 1px solid var(--wmata-table-border);
+    padding: 10px 6px;
+
+    display: grid;
+    grid-template-columns: minmax(120px, 40%) 1fr;
+    gap: 10px;
+    align-items: start;
+  }
+
+  .wmata-table.wmata-table--stack tbody td:last-child {
+    border-bottom: 0;
+  }
+
+  .wmata-table.wmata-table--stack tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--wmata-table-text);
+  }
+
+  /* Double text inside stacked cell: keep it readable */
+  .wmata-table.wmata-table--stack .wmata-table__cell--double {
+    display: block;
+  }
+
+  .wmata-table.wmata-table--stack .wmata-table__cell-secondary {
+    display: inline-block;
+    margin-left: 6px;
+  }
 }

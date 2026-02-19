@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/blocks';
 
-<Meta title="Components/Tables/DetailedDocs" />
+<Meta title="Components/Table/DetailedDocs" />
 
 ---
 title: "Tables/Docs"
@@ -14,16 +14,64 @@ Tables are designed for dense operational data (attendance, approvals, assets) w
 ---
 
 ## Available Classes
+---
 
-| Class | Purpose |
-|------|---------|
-| `.wmata-table-wrap` | Scroll container + border + radius |
-| `.wmata-table` | Base table styles |
-| `.wmata-table--zebra` | Zebra striping |
-| `.wmata-table--compact` | Reduced padding for dense data |
-| `.wmata-table--bordered` | Stronger grid lines |
-| `.wmata-td--num` | Right-align numeric cells |
-| `.wmata-table-empty` | Empty state message |
+# Class Reference
+
+Below are the required and optional classes for the WMATA Table component.
+
+---
+
+## Required Classes
+
+| Class | Description |
+|-------|------------|
+| `wmata-table-wrap` | Required wrapper for responsive behavior |
+| `wmata-table` | Base table class |
+
+---
+
+## Header Classes
+
+| Class | Description |
+|-------|------------|
+| `wmata-table__header` | Base header cell styling (apply to `<th>`) |
+| `wmata-table__header--sm` | Small header variant |
+| `wmata-table__header--lg` | Large header variant |
+| `wmata-table__header-icon` | Wrapper for header content with icon |
+| `wmata-table__icon` | Icon slot inside header |
+
+---
+
+## Cell Classes
+
+| Class | Description |
+|-------|------------|
+| `wmata-table__cell--double` | Container for double-text cell layout |
+| `wmata-table__cell-primary` | Primary cell content |
+| `wmata-table__cell-secondary` | Emphasized cell content |
+
+---
+
+## Table Modifiers
+
+| Class | Description |
+|-------|------------|
+| `wmata-table--striped` | Adds zebra striping |
+| `wmata-table--hover` | Adds hover row state |
+| `wmata-table--compact` | Reduces cell padding |
+| `wmata-table--sticky` | Enables sticky header |
+| `wmata-table--stack` | Enables responsive stacking on mobile |
+
+---
+
+# Responsive Requirement
+
+When using `wmata-table--stack`, each `<td>` must include:
+
+```html
+<td data-label="Header Name">Value</td>
+
 
 ---
 
@@ -31,25 +79,30 @@ Tables are designed for dense operational data (attendance, approvals, assets) w
 
 ```html
 <div class="wmata-table-wrap">
-  <table class="wmata-table wmata-table--zebra">
+  <table class="wmata-table">
     <thead>
       <tr>
-        <th>Date</th>
-        <th>Employee</th>
-        <th>Type</th>
-        <th class="wmata-td--num">Minutes</th>
-        <th>Status</th>
+        <th scope="col" class="wmata-table__header wmata-table__header--sm">Header</th>
+        <th scope="col" class="wmata-table__header wmata-table__header--sm">Header</th>
+        <th scope="col" class="wmata-table__header wmata-table__header--sm">Header</th>
+        <th scope="col" class="wmata-table__header wmata-table__header--sm">Header</th>
       </tr>
     </thead>
 
     <tbody>
       <tr>
-        <td>12/18/2025</td>
-        <td>Hari K</td>
-        <td>Tardy</td>
-        <td class="wmata-td--num">12</td>
-        <td><span class="wmata-table-status wmata-table-status--warning">Pending</span></td>
+        <td>Data Cell</td>
+        <td>Data Cell</td>
+        <td>Data Cell</td>
+        <td>Data Cell</td>
+      </tr>
+      <tr>
+        <td>Data Cell</td>
+        <td>Data Cell</td>
+        <td>Data Cell</td>
+        <td>Data Cell</td>
       </tr>
     </tbody>
   </table>
 </div>
+
